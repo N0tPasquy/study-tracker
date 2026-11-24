@@ -12,6 +12,18 @@ L'interfaccia e l'esperienza d'uso prendono forte ispirazione da **Neovim**: wor
 
 ---
 
+## Struttura della Roadmap
+
+Il file `roadmap_matematica2.json` incluso nel repository è costruito a partire dal sillabo universitario di Analisi Matematica II e Calcolo delle Probabilità, organizzato in **42 blocchi da 4 ore nette di studio** divisi in 7 fasi progressive:
+
+* **Fase 0 (Prerequisiti):** recupero propedeutico di limiti notevoli, sviluppi di Taylor, integrali in una variabile e basi di algebra lineare.
+* **Fasi 1–5 (Programma d'esame):** serie numeriche e di potenze, calcolo differenziale e ottimizzazione in più variabili, EDO, integrali curvilinei e doppi, calcolo delle probabilità.
+* **Fase 6 (Simulazioni e Orale):** prove scritte cronometrate con revisione degli errori e ripasso di teoremi e contro-esempi.
+
+Ogni blocco standard è suddiviso in 5 segmenti (`Teoria 60m` → `Pausa 15m` → `Esercizi 120m` → `Pausa 15m` → `Revisione 60m`). La struttura è completamente personalizzabile: modificando il JSON puoi adattare l'app a qualsiasi altro esame.
+
+---
+
 ## Come Compilare ed Eseguire
 
 ### Prerequisiti
