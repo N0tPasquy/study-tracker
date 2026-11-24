@@ -1,0 +1,2694 @@
+{
+  "blocks": [
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 1,
+      "last_note": "Test",
+      "module": "Fase 0: Prerequisiti",
+      "phase": 0,
+      "segments": [
+        {
+          "done": true,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": true,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Ripasso limiti notevoli e gerarchia degli infiniti"
+        },
+        {
+          "done": false,
+          "text": "Calcolo determinanti di matrici 2x2 e 3x3"
+        },
+        {
+          "done": false,
+          "text": "Calcolo autovalori e segno di matrici simmetriche 2x2"
+        },
+        {
+          "done": false,
+          "text": "Esercizi rapidi di riscaldamento"
+        }
+      ],
+      "title": "Ripasso veloce (limiti e matrici)"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 2,
+      "last_note": "",
+      "module": "Fase 0: Prerequisiti",
+      "phase": 0,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Formula di Taylor con resto di Peano"
+        },
+        {
+          "done": false,
+          "text": "Significato e algebra dell'o-piccolo o(x^n)"
+        },
+        {
+          "done": false,
+          "text": "Memorizzazione dei 6 sviluppi fondamentali (e^x, sin x, cos x, ln(1+x), (1+x)^a, arctan x)"
+        },
+        {
+          "done": false,
+          "text": "Primi esercizi di espansione all'ordine n"
+        }
+      ],
+      "title": "Sviluppi di Taylor (Teoria e base)"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 3,
+      "last_note": "",
+      "module": "Fase 0: Prerequisiti",
+      "phase": 0,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Composizione, prodotto e quoziente di sviluppi di Taylor"
+        },
+        {
+          "done": false,
+          "text": "Scelta dell'ordine corretto di sviluppo nei limiti"
+        },
+        {
+          "done": false,
+          "text": "Calcolo di limiti con forme indeterminate tramite Taylor"
+        },
+        {
+          "done": false,
+          "text": "Revisione errori tipici sugli o-piccoli"
+        }
+      ],
+      "title": "Sviluppi di Taylor (Esercizi)"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 4,
+      "last_note": "",
+      "module": "Fase 0: Prerequisiti",
+      "phase": 0,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Tabella delle primitive immediate e proprietà di linearità"
+        },
+        {
+          "done": false,
+          "text": "Integrazione per sostituzione (casi standard)"
+        },
+        {
+          "done": false,
+          "text": "Riconoscimento della derivata della funzione interna"
+        },
+        {
+          "done": false,
+          "text": "Esercizi svolti e autonomi su sostituzione"
+        }
+      ],
+      "title": "Integrali indefiniti (Base)"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 5,
+      "last_note": "",
+      "module": "Fase 0: Prerequisiti",
+      "phase": 0,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Formula di integrazione per parti e scelta del fattore finito/differenziale"
+        },
+        {
+          "done": false,
+          "text": "Integrali di funzioni razionali fratte (denominatore di 2° grado: delta > 0, = 0, < 0)"
+        },
+        {
+          "done": false,
+          "text": "Esercizi misti per parti e razionali fratte"
+        },
+        {
+          "done": false,
+          "text": "Ripasso schemi risolutivi"
+        }
+      ],
+      "title": "Integrali indefiniti (Tecniche)"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 6,
+      "last_note": "",
+      "module": "Fase 0: Prerequisiti",
+      "phase": 0,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Teorema fondamentale del calcolo integrale"
+        },
+        {
+          "done": false,
+          "text": "Calcolo di aree e proprietà dell'integrale definito"
+        },
+        {
+          "done": false,
+          "text": "Cambio di variabile negli estremi di integrazione"
+        },
+        {
+          "done": false,
+          "text": "Esercizi su integrali definiti"
+        }
+      ],
+      "title": "Integrali definiti"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 7,
+      "last_note": "",
+      "module": "Fase 0: Prerequisiti",
+      "phase": 0,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Batteria di limiti risolti con Taylor senza guardare il formulario"
+        },
+        {
+          "done": false,
+          "text": "Batteria mista di integrali indefiniti e definiti"
+        },
+        {
+          "done": false,
+          "text": "Verifica autonomia sui prerequisiti"
+        },
+        {
+          "done": false,
+          "text": "Appunti riepilogativi di Taylor e integrali"
+        }
+      ],
+      "title": "Consolidamento Fase 0"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 8,
+      "last_note": "",
+      "module": "Fase 1: Serie Numeriche e di Funzioni",
+      "phase": 1,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Definizione di serie numerica e successione delle somme parziali"
+        },
+        {
+          "done": false,
+          "text": "Condizione necessaria di convergenza (lim a_n = 0) e contro-esempio armonico"
+        },
+        {
+          "done": false,
+          "text": "Studio completo di serie geometriche e armoniche generalizzate"
+        },
+        {
+          "done": false,
+          "text": "Esercizi base su convergenza e somma di serie geometriche/telescopiche"
+        }
+      ],
+      "title": "Basi delle serie numeriche"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 9,
+      "last_note": "",
+      "module": "Fase 1: Serie Numeriche e di Funzioni",
+      "phase": 1,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Criterio del confronto e del confronto asintotico (con uso di Taylor)"
+        },
+        {
+          "done": false,
+          "text": "Criterio del rapporto e criterio della radice"
+        },
+        {
+          "done": false,
+          "text": "Schema decisionale per scegliere il criterio più veloce"
+        },
+        {
+          "done": false,
+          "text": "Esercizi su serie a termini positivi (Salsa-Squellati)"
+        }
+      ],
+      "title": "Criteri a termini positivi"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 10,
+      "last_note": "",
+      "module": "Fase 1: Serie Numeriche e di Funzioni",
+      "phase": 1,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Definizione di convergenza assoluta vs convergenza semplice"
+        },
+        {
+          "done": false,
+          "text": "Criterio di Leibniz per serie a termini di segno alterno"
+        },
+        {
+          "done": false,
+          "text": "Esercizi misti su tutte le tipologie di serie numeriche"
+        },
+        {
+          "done": false,
+          "text": "Esposizione orale di enunciati e ipotesi dei criteri"
+        }
+      ],
+      "title": "Segno alterno e convergenza assoluta"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 11,
+      "last_note": "",
+      "module": "Fase 1: Serie Numeriche e di Funzioni",
+      "phase": 1,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Convergenza puntuale, uniforme e totale (criterio di Weierstrass)"
+        },
+        {
+          "done": false,
+          "text": "Definizione di serie di potenze e calcolo del raggio di convergenza"
+        },
+        {
+          "done": false,
+          "text": "Verifica manuale della convergenza agli estremi dell'intervallo"
+        },
+        {
+          "done": false,
+          "text": "Esercizi sulla determinazione dell'insieme di convergenza"
+        }
+      ],
+      "title": "Serie di funzioni e Serie di potenze"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 12,
+      "last_note": "",
+      "module": "Fase 1: Serie Numeriche e di Funzioni",
+      "phase": 1,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Teoremi di derivazione e integrazione termine a termine di serie di potenze"
+        },
+        {
+          "done": false,
+          "text": "Definizione di funzione analitica e collegamento con la serie di Taylor"
+        },
+        {
+          "done": false,
+          "text": "Sviluppi in serie di potenze notevoli e calcolo di somme di serie"
+        },
+        {
+          "done": false,
+          "text": "Esercizi su sviluppi in serie di Taylor"
+        }
+      ],
+      "title": "Operazioni e Serie di Taylor"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 13,
+      "last_note": "",
+      "module": "Fase 1: Serie Numeriche e di Funzioni",
+      "phase": 1,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Esercizi d'esame su serie numeriche con parametro"
+        },
+        {
+          "done": false,
+          "text": "Esercizi d'esame completi su serie di potenze e relativi estremi"
+        },
+        {
+          "done": false,
+          "text": "Revisione teorica di tutti i criteri e contro-esempi"
+        },
+        {
+          "done": false,
+          "text": "Check finale Fase 1"
+        }
+      ],
+      "title": "Consolidamento Fase 1"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 14,
+      "last_note": "",
+      "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
+      "phase": 2,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Determinazione e disegno del dominio nel piano xy"
+        },
+        {
+          "done": false,
+          "text": "Nozioni topologiche: insiemi aperti, chiusi, limitati, frontiera"
+        },
+        {
+          "done": false,
+          "text": "Definizione e disegno delle curve di livello"
+        },
+        {
+          "done": false,
+          "text": "Esercizi grafici su domini e curve di livello"
+        }
+      ],
+      "title": "Geometria nel piano"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 15,
+      "last_note": "",
+      "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
+      "phase": 2,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Definizione di limite e continuità in R^2"
+        },
+        {
+          "done": false,
+          "text": "Uso delle restrizioni (rette, parabole) per dimostrare la non esistenza"
+        },
+        {
+          "done": false,
+          "text": "Uso di coordinate polari e maggiorazioni per dimostrare l'esistenza"
+        },
+        {
+          "done": false,
+          "text": "Esercizi d'esame su limiti e prolungabilità per continuità"
+        }
+      ],
+      "title": "Limiti e continuità in due variabili"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 16,
+      "last_note": "",
+      "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
+      "phase": 2,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Calcolo di derivate parziali e vettore gradiente"
+        },
+        {
+          "done": false,
+          "text": "Derivate direzionali e direzione di massima pendenza"
+        },
+        {
+          "done": false,
+          "text": "Equazione del piano tangente e interpretazione geometrica"
+        },
+        {
+          "done": false,
+          "text": "Esercizi su gradiente, derivate direzionali e piano tangente"
+        }
+      ],
+      "title": "Calcolo differenziale di base"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 17,
+      "last_note": "",
+      "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
+      "phase": 2,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Definizione di differenziabilità e formula del gradiente"
+        },
+        {
+          "done": false,
+          "text": "Teorema del differenziale totale"
+        },
+        {
+          "done": false,
+          "text": "Relazioni tra continuità, derivabilità e differenziabilità"
+        },
+        {
+          "done": false,
+          "text": "Costruzione e memorizzazione dei contro-esempi classici per l'orale"
+        }
+      ],
+      "title": "Differenziabilità e contro-esempi"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 18,
+      "last_note": "",
+      "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
+      "phase": 2,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Derivate parziali seconde e Teorema di Schwarz"
+        },
+        {
+          "done": false,
+          "text": "Costruzione della matrice Hessiana e formula di Taylor al 2° ordine"
+        },
+        {
+          "done": false,
+          "text": "Impostazione e risoluzione del sistema grad(f) = 0 per i punti critici"
+        },
+        {
+          "done": false,
+          "text": "Esercizi sulla ricerca dei punti stazionari"
+        }
+      ],
+      "title": "Taylor al 2° ordine e Punti critici"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 19,
+      "last_note": "",
+      "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
+      "phase": 2,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Classificazione dei punti critici (massimo, minimo, sella) tramite Hessiana"
+        },
+        {
+          "done": false,
+          "text": "Strategie per i casi dubbi con determinante Hessiano nullo (studio del segno di Δf)"
+        },
+        {
+          "done": false,
+          "text": "Esercizi completi di ricerca e classificazione di estremi liberi"
+        },
+        {
+          "done": false,
+          "text": "Ripasso orale della classificazione con matrice Hessiana"
+        }
+      ],
+      "title": "Ottimizzazione libera"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 20,
+      "last_note": "",
+      "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
+      "phase": 2,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Teorema di Weierstrass su insiemi compatti (chiusi e limitati)"
+        },
+        {
+          "done": false,
+          "text": "Riduzione parametrica per vincoli semplici (segmenti, circonferenze)"
+        },
+        {
+          "done": false,
+          "text": "Metodo dei moltiplicatori di Lagrange (funzione Lagrangiana)"
+        },
+        {
+          "done": false,
+          "text": "Esercizi su massimi e minimi assoluti su domini compatti"
+        }
+      ],
+      "title": "Ottimizzazione vincolata"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 21,
+      "last_note": "",
+      "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
+      "phase": 2,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Studi completi d'esame: dominio, differenziabilità, punti critici e vincoli"
+        },
+        {
+          "done": false,
+          "text": "Verifica rapidità nella risoluzione di sistemi non lineari"
+        },
+        {
+          "done": false,
+          "text": "Esposizione orale di teoremi (Schwarz, Weierstrass, Lagrange) e contro-esempi"
+        },
+        {
+          "done": false,
+          "text": "Check finale Fase 2"
+        }
+      ],
+      "title": "Consolidamento Fase 2"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 22,
+      "last_note": "",
+      "module": "Fase 3: Equazioni Differenziali Ordinarie",
+      "phase": 3,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Definizione di EDO, ordine, integrale generale e Problema di Cauchy"
+        },
+        {
+          "done": false,
+          "text": "Metodo di risoluzione per EDO del 1° ordine a variabili separabili"
+        },
+        {
+          "done": false,
+          "text": "Analisi delle soluzioni costanti (singolari) e intervallo massimale"
+        },
+        {
+          "done": false,
+          "text": "Esercizi su EDO a variabili separabili con condizione iniziale"
+        }
+      ],
+      "title": "Introduzione e Variabili separabili"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 23,
+      "last_note": "",
+      "module": "Fase 3: Equazioni Differenziali Ordinarie",
+      "phase": 3,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Forma normale e formula risolutiva per EDO lineari del 1° ordine"
+        },
+        {
+          "done": false,
+          "text": "Risoluzione di Problemi di Cauchy lineari del 1° ordine"
+        },
+        {
+          "done": false,
+          "text": "Esercizi misti di riconoscimento tra separabili e lineari"
+        },
+        {
+          "done": false,
+          "text": "Ripasso dimostrazione della formula risolutiva"
+        }
+      ],
+      "title": "EDO lineari del 1° ordine"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 24,
+      "last_note": "",
+      "module": "Fase 3: Equazioni Differenziali Ordinarie",
+      "phase": 3,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Struttura dello spazio delle soluzioni per EDO lineari a coefficienti costanti"
+        },
+        {
+          "done": false,
+          "text": "Polinomio caratteristico e 3 casi del discriminante (Δ > 0, Δ = 0, Δ < 0)"
+        },
+        {
+          "done": false,
+          "text": "Imposizione delle condizioni iniziali y(x0) e y'(x0)"
+        },
+        {
+          "done": false,
+          "text": "Esercizi su EDO del 2° ordine omogenee"
+        }
+      ],
+      "title": "EDO del 2° ordine omogenee"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 25,
+      "last_note": "",
+      "module": "Fase 3: Equazioni Differenziali Ordinarie",
+      "phase": 3,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Principio di sovrapposizione: integrale generale = omogenea + particolare"
+        },
+        {
+          "done": false,
+          "text": "Metodo di somiglianza per polinomi, esponenziali e seni/coseni"
+        },
+        {
+          "done": false,
+          "text": "Gestione dei casi di risonanza (molteplicità della radice)"
+        },
+        {
+          "done": false,
+          "text": "Esercizi completi su Problemi di Cauchy non omogenei"
+        }
+      ],
+      "title": "EDO del 2° ordine non omogenee"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 26,
+      "last_note": "",
+      "module": "Fase 3: Equazioni Differenziali Ordinarie",
+      "phase": 3,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Batteria mista di Problemi di Cauchy del 1° e 2° ordine"
+        },
+        {
+          "done": false,
+          "text": "Verifica delle soluzioni tramite sostituzione diretta nell'EDO"
+        },
+        {
+          "done": false,
+          "text": "Ripasso teorico su esistenza, unicità e linearità"
+        },
+        {
+          "done": false,
+          "text": "Check finale Fase 3"
+        }
+      ],
+      "title": "Consolidamento Fase 3"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 27,
+      "last_note": "",
+      "module": "Fase 4: Integrazione in due variabili",
+      "phase": 4,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Parametrizzazione di curve regolari (segmenti, archi di parabola, circonferenze, ellissi)"
+        },
+        {
+          "done": false,
+          "text": "Vettore tangente, norma e lunghezza di una curva"
+        },
+        {
+          "done": false,
+          "text": "Definizione e calcolo dell'integrale curvilineo di 1ª specie"
+        },
+        {
+          "done": false,
+          "text": "Esercizi sul calcolo di integrali curvilinei"
+        }
+      ],
+      "title": "Curve e Integrale curvilineo"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 28,
+      "last_note": "",
+      "module": "Fase 4: Integrazione in due variabili",
+      "phase": 4,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Integrali doppi su rettangoli e Teorema di Fubini"
+        },
+        {
+          "done": false,
+          "text": "Riconoscimento di domini x-semplici e y-semplici"
+        },
+        {
+          "done": false,
+          "text": "Formule di riduzione e scambio dell'ordine di integrazione"
+        },
+        {
+          "done": false,
+          "text": "Esercizi su integrali doppi in coordinate cartesiane"
+        }
+      ],
+      "title": "Integrali doppi e riduzione"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 29,
+      "last_note": "",
+      "module": "Fase 4: Integrazione in due variabili",
+      "phase": 4,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Teorema del cambio di variabile e determinante Jacobiano (ρ)"
+        },
+        {
+          "done": false,
+          "text": "Impostazione degli estremi per cerchi, corone circolari e settori"
+        },
+        {
+          "done": false,
+          "text": "Coordinate polari traslate (cerchi non centrati nell'origine)"
+        },
+        {
+          "done": false,
+          "text": "Esercizi di integrazione doppia in coordinate polari"
+        }
+      ],
+      "title": "Cambio di variabile in coordinate polari"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 30,
+      "last_note": "",
+      "module": "Fase 4: Integrazione in due variabili",
+      "phase": 4,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Disegno preciso di intersezioni tra rette, parabole e circonferenze"
+        },
+        {
+          "done": false,
+          "text": "Scomposizione di domini complessi e sfruttamento delle simmetrie (parità/disparità)"
+        },
+        {
+          "done": false,
+          "text": "Esercizi solo sull'impostazione degli estremi di integrazione"
+        },
+        {
+          "done": false,
+          "text": "Risoluzione completa di 4-5 integrali su domini composti"
+        }
+      ],
+      "title": "Allenamento sui domini composti"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 31,
+      "last_note": "",
+      "module": "Fase 4: Integrazione in due variabili",
+      "phase": 4,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Esercizi misti d'esame su integrali curvilinei e doppi"
+        },
+        {
+          "done": false,
+          "text": "Scelta rapida tra coordinate cartesiane e polari"
+        },
+        {
+          "done": false,
+          "text": "Ripasso orale delle formule di riduzione e cambio di variabile"
+        },
+        {
+          "done": false,
+          "text": "Check finale Fase 4"
+        }
+      ],
+      "title": "Consolidamento Fase 4"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 32,
+      "last_note": "",
+      "module": "Fase 5: Calcolo delle Probabilità",
+      "phase": 5,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Disposizioni, permutazioni e combinazioni (con e senza ripetizione)"
+        },
+        {
+          "done": false,
+          "text": "Spazio campionario, eventi e definizione assiomatica di probabilità (Kolmogorov)"
+        },
+        {
+          "done": false,
+          "text": "Proprietà elementari e probabilità uniforme su spazi finiti"
+        },
+        {
+          "done": false,
+          "text": "Esercizi di calcolo combinatorio e probabilità classica"
+        }
+      ],
+      "title": "Combinatoria e Assiomi"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 33,
+      "last_note": "",
+      "module": "Fase 5: Calcolo delle Probabilità",
+      "phase": 5,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Probabilità condizionata e formula della probabilità composta"
+        },
+        {
+          "done": false,
+          "text": "Distinzione tra eventi indipendenti ed eventi incompatibili (disgiunti)"
+        },
+        {
+          "done": false,
+          "text": "Legge della probabilità totale, Teorema di Bayes e formula di Bernoulli"
+        },
+        {
+          "done": false,
+          "text": "Esercizi mirati su Bayes e prove ripetute"
+        }
+      ],
+      "title": "Probabilità condizionata e Bayes"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 34,
+      "last_note": "",
+      "module": "Fase 5: Calcolo delle Probabilità",
+      "phase": 5,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Variabili aleatorie discrete e continue: definizione e funzione di ripartizione F(x)"
+        },
+        {
+          "done": false,
+          "text": "Funzione di massa di probabilità e funzione di densità f(x)"
+        },
+        {
+          "done": false,
+          "text": "Modelli notevoli: Binomiale, Poisson, Uniforme, Esponenziale, Normale"
+        },
+        {
+          "done": false,
+          "text": "Esercizi sul calcolo di probabilità con F(x) e modelli notevoli"
+        }
+      ],
+      "title": "Variabili aleatorie"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 35,
+      "last_note": "",
+      "module": "Fase 5: Calcolo delle Probabilità",
+      "phase": 5,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Calcolo di valore atteso E[X], varianza Var(X) e deviazione standard"
+        },
+        {
+          "done": false,
+          "text": "Proprietà di linearità della media e trasformazioni lineari della varianza"
+        },
+        {
+          "done": false,
+          "text": "Enunciato e applicazioni della disuguaglianza di Chebyshev"
+        },
+        {
+          "done": false,
+          "text": "Esercizi su momenti e stime con Chebyshev"
+        }
+      ],
+      "title": "Valore atteso, varianza e Chebyshev"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 36,
+      "last_note": "",
+      "module": "Fase 5: Calcolo delle Probabilità",
+      "phase": 5,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Distribuzioni congiunte, distribuzioni marginali e indipendenza tra variabili"
+        },
+        {
+          "done": false,
+          "text": "Convergenza in probabilità e Legge dei Grandi Numeri (LGN)"
+        },
+        {
+          "done": false,
+          "text": "Convergenza in legge e Teorema del Limite Centrale (TLC)"
+        },
+        {
+          "done": false,
+          "text": "Esercizi su variabili congiunte e approssimazione normale tramite TLC"
+        }
+      ],
+      "title": "Congiunte e Teoremi limite"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 37,
+      "last_note": "",
+      "module": "Fase 5: Calcolo delle Probabilità",
+      "phase": 5,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Problemi testuali misti (traduzione dal testo al modello probabilistico)"
+        },
+        {
+          "done": false,
+          "text": "Uso corretto delle tavole della Normale standard per il TLC"
+        },
+        {
+          "done": false,
+          "text": "Ripasso orale di Bayes, Chebyshev, LGN e TLC"
+        },
+        {
+          "done": false,
+          "text": "Check finale Fase 5"
+        }
+      ],
+      "title": "Consolidamento Fase 5"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 38,
+      "last_note": "",
+      "module": "Fase 6: Simulazioni d'Esame e Orale",
+      "phase": 6,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Simulazione cronometrata",
+          "target_minutes": 150,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Correzione e quaderno errori",
+          "target_minutes": 90,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Svolgimento prova d'esame completa sotto cronometro senza appunti"
+        },
+        {
+          "done": false,
+          "text": "Correzione analitica di ogni esercizio svolto"
+        },
+        {
+          "done": false,
+          "text": "Creazione del quaderno delle lacune con gli errori commessi"
+        }
+      ],
+      "title": "Simulazione scritta #1"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 39,
+      "last_note": "",
+      "module": "Fase 6: Simulazioni d'Esame e Orale",
+      "phase": 6,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Teoria",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esercizi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Revisione e Orale",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Analisi degli errori della simulazione #1 sulle Fasi 1-4"
+        },
+        {
+          "done": false,
+          "text": "Risoluzione mirata di esercizi sulle tipologie più deboli"
+        },
+        {
+          "done": false,
+          "text": "Verifica tempi di esecuzione per singolo esercizio"
+        },
+        {
+          "done": false,
+          "text": "Aggiornamento del quaderno delle lacune"
+        }
+      ],
+      "title": "Ripasso chirurgico (Analisi)"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 40,
+      "last_note": "",
+      "module": "Fase 6: Simulazioni d'Esame e Orale",
+      "phase": 6,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Simulazione cronometrata",
+          "target_minutes": 150,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Correzione e quaderno errori",
+          "target_minutes": 90,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Svolgimento seconda prova d'esame completa sotto cronometro"
+        },
+        {
+          "done": false,
+          "text": "Correzione analitica completa della prova"
+        },
+        {
+          "done": false,
+          "text": "Ripasso mirato ed esercizi extra sugli eventuali errori della Fase 5"
+        }
+      ],
+      "title": "Simulazione scritta #2 e fix Probabilità"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 41,
+      "last_note": "",
+      "module": "Fase 6: Simulazioni d'Esame e Orale",
+      "phase": 6,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Schematizzazione teoremi",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esposizione e contro-esempi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Check finale e ripasso",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Schematizzazione definizioni, ipotesi e tesi di Serie, Più Variabili ed EDO"
+        },
+        {
+          "done": false,
+          "text": "Esposizione ad alta voce dei teoremi principali"
+        },
+        {
+          "done": false,
+          "text": "Ripasso di tutti i contro-esempi chiave (serie, continuità/differenziabilità, punti critici)"
+        }
+      ],
+      "title": "Preparazione Orale (Fasi 1-3)"
+    },
+    {
+      "completed": false,
+      "completed_at": "",
+      "current_segment_index": 0,
+      "id": 42,
+      "last_note": "",
+      "module": "Fase 6: Simulazioni d'Esame e Orale",
+      "phase": 6,
+      "segments": [
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Schematizzazione teoremi",
+          "target_minutes": 60,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Esposizione e contro-esempi",
+          "target_minutes": 120,
+          "type": "study"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Pausa",
+          "target_minutes": 15,
+          "type": "break"
+        },
+        {
+          "done": false,
+          "elapsed_seconds": 0,
+          "label": "Check finale e ripasso",
+          "target_minutes": 60,
+          "type": "study"
+        }
+      ],
+      "tasks": [
+        {
+          "done": false,
+          "text": "Esposizione ad alta voce su integrali curvilinei, doppi e cambio di variabile"
+        },
+        {
+          "done": false,
+          "text": "Esposizione ad alta voce su Bayes, Chebyshev, LGN e TLC"
+        },
+        {
+          "done": false,
+          "text": "Rilettura finale del quaderno degli errori e simulazione domande orali"
+        }
+      ],
+      "title": "Preparazione Orale (Fasi 4-5) e check finale"
+    }
+  ],
+  "current_block_index": 0,
+  "exam_date": "2027-01-25",
+  "exam_name": "Matematica II + Probabilità",
+  "weekly_goal_blocks": 3
+}

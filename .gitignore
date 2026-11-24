@@ -1,0 +1,19 @@
+# Build artifacts
+build/
+bin/
+*.o
+*.a
+*.dylib
+
+# Temporary and backup files
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+
+# IDE and Editor configurations
+.vscode/
+.idea/
+.cache/
+compile_commands.json
