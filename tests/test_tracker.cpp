@@ -179,17 +179,43 @@ void test_ui_events_and_modal_navigation() {
     assert(roadmap.blocks[0].completed);
     assert(!roadmap.blocks[0].completed_at.empty());
 
+    // 6b. Test unmapped keys in NORMAL mode ('u', 'o' while focus is on Tasks)
+    // They must be consumed and must NOT pollute the note buffer!
+    assert(controller.get_focus_section() == tracker::FocusSection::Tasks);
+    std::string note_before = roadmap.blocks[0].last_note;
+    bool handled_u = component->OnEvent(Event::Character('u'));
+    assert(handled_u);
+    bool handled_o = component->OnEvent(Event::Character('o'));
+    assert(handled_o);
+    assert(roadmap.blocks[0].last_note == note_before);
+
     // 7. Test INSERT mode: press 'i'
     component->OnEvent(Event::Character('i'));
+    assert(controller.get_note_cursor() == 0); // 'i' puts cursor at the beginning
+
     // In insert mode, characters like 'j', 'k', 't', 'x' should NOT trigger commands!
     component->OnEvent(Event::Character('C'));
     component->OnEvent(Event::Character('i'));
     component->OnEvent(Event::Character('a'));
     component->OnEvent(Event::Character('o'));
+    assert(controller.get_note_cursor() == 4);
+
+    // Arrow navigation moves cursor
+    component->OnEvent(Event::ArrowLeft);
+    assert(controller.get_note_cursor() == 3);
+    component->OnEvent(Event::ArrowRight);
+    assert(controller.get_note_cursor() == 4);
+
     // Press Return to save and exit INSERT mode (Opzione A approved by user)
     component->OnEvent(Event::Return);
 
     assert(roadmap.blocks[0].last_note.find("Ciao") != std::string::npos);
+
+    // Test 'a' enters insert mode and places cursor at the end
+    int prev_size = static_cast<int>(roadmap.blocks[0].last_note.size());
+    component->OnEvent(Event::Character('a'));
+    assert(controller.get_note_cursor() == prev_size);
+    component->OnEvent(Event::Escape);
 
     // 8. Test Roadmap View: press 'r'
     component->OnEvent(Event::Character('r'));

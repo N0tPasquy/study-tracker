@@ -531,8 +531,48 @@ Element UIController::RenderFocusView() {
     // 4. Last Note Box
     Element note_content;
     if (mode_ == AppMode::Insert) {
+        int clamped_cursor = std::clamp(note_cursor_, 0, static_cast<int>(note_buffer_.size()));
+        Element text_line;
+
+        if (note_buffer_.empty()) {
+            text_line = hbox({
+                text("  "),
+                text(" ") | bgcolor(Color::Gold1) | color(Color::Black) | focusCursorBlockBlinking,
+            });
+        } else if (clamped_cursor >= static_cast<int>(note_buffer_.size())) {
+            text_line = hbox({
+                text("  " + note_buffer_) | color(Color::White),
+                text(" ") | bgcolor(Color::Gold1) | color(Color::Black) | focusCursorBlockBlinking,
+            });
+        } else {
+            // Calcola la lunghezza del codepoint UTF-8 sotto il cursore
+            size_t char_len = 1;
+            unsigned char c = static_cast<unsigned char>(note_buffer_[clamped_cursor]);
+            if ((c & 0x80) == 0) char_len = 1;
+            else if ((c & 0xE0) == 0xC0) char_len = 2;
+            else if ((c & 0xF0) == 0xE0) char_len = 3;
+            else if ((c & 0xF8) == 0xF0) char_len = 4;
+            else char_len = 1;
+
+            if (clamped_cursor + char_len > note_buffer_.size()) {
+                char_len = note_buffer_.size() - clamped_cursor;
+            }
+
+            std::string before = note_buffer_.substr(0, clamped_cursor);
+            std::string cursor_char = note_buffer_.substr(clamped_cursor, char_len);
+            std::string after = note_buffer_.substr(clamped_cursor + char_len);
+
+            Elements line_parts;
+            line_parts.push_back(text("  " + before) | color(Color::White));
+            line_parts.push_back(text(cursor_char) | bgcolor(Color::Gold1) | color(Color::Black) | bold | focusCursorBlockBlinking);
+            if (!after.empty()) {
+                line_parts.push_back(text(after) | color(Color::White));
+            }
+            text_line = hbox(std::move(line_parts));
+        }
+
         note_content = vbox({
-            text("  " + (note_buffer_.empty() ? " " : note_buffer_)) | color(Color::White),
+            text_line,
             text("  [MODALITÀ INSERT: Scrivi liberamente. Premi Esc o Enter per salvare] ") | color(Color::YellowLight) | dim,
         });
     } else {
@@ -1014,7 +1054,9 @@ Component UIController::CreateComponent() {
             }
         }
 
-        return false;
+        // In modalità Normal, i tasti non mappati devono essere ignorati/consumati
+        // per evitare che vengano propagati a input_component e scritti nelle note.
+        return true;
     });
 
     return root;

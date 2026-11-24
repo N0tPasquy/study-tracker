@@ -63,6 +63,8 @@ public:
     int get_selected_resource_index() const { return selected_resource_index_; }
     void set_selected_resource_index(int idx) { selected_resource_index_ = idx; }
 
+    int get_note_cursor() const { return note_cursor_; }
+
     void set_url_opener(UrlOpenerFunc opener) { url_opener_ = std::move(opener); }
 
 private:
