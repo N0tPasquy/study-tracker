@@ -8,16 +8,54 @@
       "last_note": "Test",
       "module": "Fase 0: Prerequisiti",
       "phase": 0,
+      "resources": [
+        {
+          "title": "Limiti di funzioni e forme indeterminate",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=UVoMX19xmmQ",
+          "watched": false
+        },
+        {
+          "title": "Limite notevole esponenziale di Nepero (esercizi)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=fwS7dISRUts",
+          "watched": false
+        },
+        {
+          "title": "Limiti notevoli: esponenziale e logaritmico",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=A08bTf756cc",
+          "watched": false
+        },
+        {
+          "title": "Limiti notevoli: (1-cos x)/x^2 e [(1+x)^a - 1]/x",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=8bPn4Pm_xzA",
+          "watched": false
+        },
+        {
+          "title": "Determinante di una matrice (regola di Laplace)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=yW0DTDxl5sI",
+          "watched": false
+        },
+        {
+          "title": "Autovalori ed autovettori",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=adrEH4Z5S4k",
+          "watched": false
+        }
+      ],
       "segments": [
         {
-          "done": true,
+          "done": false,
           "elapsed_seconds": 0,
           "label": "Teoria",
           "target_minutes": 60,
           "type": "study"
         },
         {
-          "done": true,
+          "done": false,
           "elapsed_seconds": 0,
           "label": "Pausa",
           "target_minutes": 15,
@@ -73,6 +111,20 @@
       "last_note": "",
       "module": "Fase 0: Prerequisiti",
       "phase": 0,
+      "resources": [
+        {
+          "title": "Infinitesimi, o-piccolo e ordine degli infinitesimi",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=fgYEQxrBlUU",
+          "watched": false
+        },
+        {
+          "title": "Formula di Taylor, MacLaurin e resto di Lagrange",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=ieL0MfQWBi8",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -138,6 +190,14 @@
       "last_note": "",
       "module": "Fase 0: Prerequisiti",
       "phase": 0,
+      "resources": [
+        {
+          "title": "Limiti con gli sviluppi di Taylor (esercizi svolti)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=VuAaZuoP--Q",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -203,6 +263,26 @@
       "last_note": "",
       "module": "Fase 0: Prerequisiti",
       "phase": 0,
+      "resources": [
+        {
+          "title": "Integrali indefiniti - primitiva di una funzione",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=0uUMkKiPNSc",
+          "watched": false
+        },
+        {
+          "title": "Integrazione per sostituzione: come impostarla",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=k-lZctAadyE",
+          "watched": false
+        },
+        {
+          "title": "Integrale con metodo di sostituzione (esercizio d'esame)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=Anujqfsoqws",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -268,6 +348,26 @@
       "last_note": "",
       "module": "Fase 0: Prerequisiti",
       "phase": 0,
+      "resources": [
+        {
+          "title": "Integrazione per parti",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=FVz5I9ulTRg",
+          "watched": false
+        },
+        {
+          "title": "Integrali di funzioni razionali fratte (grado num >= den)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=3h63ggJWYCI",
+          "watched": false
+        },
+        {
+          "title": "Integrale di funzione razionale fratta (fratti semplici)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=INuWZdP9PvU",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -333,6 +433,20 @@
       "last_note": "",
       "module": "Fase 0: Prerequisiti",
       "phase": 0,
+      "resources": [
+        {
+          "title": "Integrali definiti: teoria ed esempio",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=AEnkmOBWtlk",
+          "watched": false
+        },
+        {
+          "title": "Proprietà integrali definiti",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=lWlTxOVaMJo",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -398,6 +512,26 @@
       "last_note": "",
       "module": "Fase 0: Prerequisiti",
       "phase": 0,
+      "resources": [
+        {
+          "title": "Playlist: Integrali di una funzione ad una variabile",
+          "type": "playlist",
+          "url": "https://www.youtube.com/playlist?list=PLW4IfhQEjCpKHFU75JgENrPXROQ-ofRIO",
+          "watched": false
+        },
+        {
+          "title": "Playlist: Analisi matematica 1",
+          "type": "playlist",
+          "url": "https://www.youtube.com/playlist?list=PLW4IfhQEjCpKK46Pi5jhcYUUOjQMhzalR",
+          "watched": false
+        },
+        {
+          "title": "Playlist: Algebra lineare",
+          "type": "playlist",
+          "url": "https://www.youtube.com/playlist?list=PLW4IfhQEjCpJaWnqvWGliPiiL1q8QejNL",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -463,6 +597,26 @@
       "last_note": "",
       "module": "Fase 1: Serie Numeriche e di Funzioni",
       "phase": 1,
+      "resources": [
+        {
+          "title": "Serie numeriche: introduzione teorica, serie geometrica e somma",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=Ip6FkW3kGMM",
+          "watched": false
+        },
+        {
+          "title": "Serie armonica: divergenza con dimostrazione",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=62ExRytHlGY",
+          "watched": false
+        },
+        {
+          "title": "Serie armonica generalizzata: dimostrazione ed esempi",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=4gmZx2Ooxn8",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -528,6 +682,32 @@
       "last_note": "",
       "module": "Fase 1: Serie Numeriche e di Funzioni",
       "phase": 1,
+      "resources": [
+        {
+          "title": "Serie numeriche: criterio del confronto (Gauss)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=w1ujXpffU7o",
+          "watched": false
+        },
+        {
+          "title": "Criterio del confronto asintotico",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=-CBiFIdIDxk",
+          "watched": false
+        },
+        {
+          "title": "Criterio del rapporto",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=z8wPT4KdqdQ",
+          "watched": false
+        },
+        {
+          "title": "Criterio della radice",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=WE3fX4JKdWA",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -593,6 +773,14 @@
       "last_note": "",
       "module": "Fase 1: Serie Numeriche e di Funzioni",
       "phase": 1,
+      "resources": [
+        {
+          "title": "Serie a termini di segno alterno, Leibniz e convergenza assoluta",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=lRSGpxrXC_g",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -658,6 +846,26 @@
       "last_note": "",
       "module": "Fase 1: Serie Numeriche e di Funzioni",
       "phase": 1,
+      "resources": [
+        {
+          "title": "Serie di funzioni: convergenza puntuale ed uniforme",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=oFkAvKm81MI",
+          "watched": false
+        },
+        {
+          "title": "Serie di funzioni: teorema del limite e continuità termine a termine",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=Of0kydrjgH8",
+          "watched": false
+        },
+        {
+          "title": "Serie di potenze: raggio, convergenza totale e uniforme",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=ROVTlTzbtbY",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -723,6 +931,20 @@
       "last_note": "",
       "module": "Fase 1: Serie Numeriche e di Funzioni",
       "phase": 1,
+      "resources": [
+        {
+          "title": "Serie di potenze: derivata e integrale (esercizi)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=yNy0LNc3jxI",
+          "watched": false
+        },
+        {
+          "title": "Funzioni analitiche: trovare la serie di potenze da una funzione",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=9pS-G3a3a8o",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -788,6 +1010,20 @@
       "last_note": "",
       "module": "Fase 1: Serie Numeriche e di Funzioni",
       "phase": 1,
+      "resources": [
+        {
+          "title": "Playlist: Serie numeriche",
+          "type": "playlist",
+          "url": "https://www.youtube.com/playlist?list=PLW4IfhQEjCpKKCn9DMXpJzhokUz2PO6da",
+          "watched": false
+        },
+        {
+          "title": "Playlist: Analisi matematica 2",
+          "type": "playlist",
+          "url": "https://www.youtube.com/playlist?list=PLW4IfhQEjCpKCTlqcemqKEdZCpFhVaq6k",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -853,6 +1089,20 @@
       "last_note": "",
       "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
       "phase": 2,
+      "resources": [
+        {
+          "title": "Funzioni a due variabili: Dominio",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=yPPX5icYGio",
+          "watched": false
+        },
+        {
+          "title": "Funzione a due variabili: Curve di livello",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=-iW9Mftk208",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -918,6 +1168,14 @@
       "last_note": "",
       "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
       "phase": 2,
+      "resources": [
+        {
+          "title": "Limite di una funzione a due variabili (esercizio d'esame)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=dIkz1DTC_RI",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -983,6 +1241,14 @@
       "last_note": "",
       "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
       "phase": 2,
+      "resources": [
+        {
+          "title": "Derivate direzionali e derivate parziali",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=UdkihTAJmls",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1048,6 +1314,20 @@
       "last_note": "",
       "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
       "phase": 2,
+      "resources": [
+        {
+          "title": "Differenziabilità, derivabilità e continuità in due variabili",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=K75isaIz4BA",
+          "watched": false
+        },
+        {
+          "title": "Differenziale di una funzione",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=p2c47rpX4Eg",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1113,6 +1393,14 @@
       "last_note": "",
       "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
       "phase": 2,
+      "resources": [
+        {
+          "title": "Polinomio di Taylor per funzioni a due variabili",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=hswF_m_IJBU",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1178,6 +1466,32 @@
       "last_note": "",
       "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
       "phase": 2,
+      "resources": [
+        {
+          "title": "Massimi e minimi in due variabili, punti sella e Hessiana",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=BwlLHYBk1JQ",
+          "watched": false
+        },
+        {
+          "title": "Hessiano uguale a zero: svolgimento",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=ArkiEQ8o1v4",
+          "watched": false
+        },
+        {
+          "title": "Funzione a due variabili con Hessiano nullo",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=kz_mndXJyTk",
+          "watched": false
+        },
+        {
+          "title": "Hessiano nullo: studio senza matrice Hessiana",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=ktEFVhMQHKU",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1243,6 +1557,32 @@
       "last_note": "",
       "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
       "phase": 2,
+      "resources": [
+        {
+          "title": "Massimi e minimi vincolati: moltiplicatori di Lagrange",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=ej_rFFaqxSY",
+          "watched": false
+        },
+        {
+          "title": "Moltiplicatori di Lagrange e Hessiano orlato",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=nslfTmvwwtU",
+          "watched": false
+        },
+        {
+          "title": "Massimi e minimi assoluti su dominio chiuso e limitato",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=Jpax2QUsyaE",
+          "watched": false
+        },
+        {
+          "title": "Massimi e minimi vincolati senza Lagrangiana",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=vUYQnL5TybY",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1308,6 +1648,20 @@
       "last_note": "",
       "module": "Fase 2: Funzioni di più variabili e Ottimizzazione",
       "phase": 2,
+      "resources": [
+        {
+          "title": "Massimi e minimi senza calcolare le derivate parziali",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=MEE-3tbpVDM",
+          "watched": false
+        },
+        {
+          "title": "Playlist: Funzioni a due variabili",
+          "type": "playlist",
+          "url": "https://www.youtube.com/playlist?list=PLW4IfhQEjCpLGwNoNzbK1QZbQh2K1Fz7h",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1373,6 +1727,26 @@
       "last_note": "",
       "module": "Fase 3: Equazioni Differenziali Ordinarie",
       "phase": 3,
+      "resources": [
+        {
+          "title": "EDO del primo ordine a variabili separabili (1/2)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=qUBavH2V6MU",
+          "watched": false
+        },
+        {
+          "title": "EDO a variabili separabili: tutte le soluzioni (2/2)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=2-Zlg4jZgU0",
+          "watched": false
+        },
+        {
+          "title": "Problemi di Cauchy: esistenza e unicità in piccolo",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=a9kyZuChRsM",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1438,6 +1812,14 @@
       "last_note": "",
       "module": "Fase 3: Equazioni Differenziali Ordinarie",
       "phase": 3,
+      "resources": [
+        {
+          "title": "Equazioni differenziali lineari del primo ordine",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=0lvvGwISfSo",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1503,6 +1885,14 @@
       "last_note": "",
       "module": "Fase 3: Equazioni Differenziali Ordinarie",
       "phase": 3,
+      "resources": [
+        {
+          "title": "Equazioni differenziali secondo ordine omogenee",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=GyMpzshZJkE",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1568,6 +1958,20 @@
       "last_note": "",
       "module": "Fase 3: Equazioni Differenziali Ordinarie",
       "phase": 3,
+      "resources": [
+        {
+          "title": "EDO non omogenee del secondo ordine (metodo di somiglianza)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=Ij2V7cj_lh8",
+          "watched": false
+        },
+        {
+          "title": "Metodo variazioni delle costanti (Lagrange) [extra]",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=teJBxqdP-jA",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1633,6 +2037,14 @@
       "last_note": "",
       "module": "Fase 3: Equazioni Differenziali Ordinarie",
       "phase": 3,
+      "resources": [
+        {
+          "title": "Playlist: Analisi matematica 2",
+          "type": "playlist",
+          "url": "https://www.youtube.com/playlist?list=PLW4IfhQEjCpKCTlqcemqKEdZCpFhVaq6k",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1698,6 +2110,26 @@
       "last_note": "",
       "module": "Fase 4: Integrazione in due variabili",
       "phase": 4,
+      "resources": [
+        {
+          "title": "Curve regolari, curve semplici e integrali di linea",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=_AwLp71oRn0",
+          "watched": false
+        },
+        {
+          "title": "Lunghezza di una curva regolare e ascissa curvilinea",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=ngEXGlJCpT4",
+          "watched": false
+        },
+        {
+          "title": "Integrali di linea: esercizi e significato geometrico",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=nnig2JyKV_A",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1763,6 +2195,14 @@
       "last_note": "",
       "module": "Fase 4: Integrazione in due variabili",
       "phase": 4,
+      "resources": [
+        {
+          "title": "Integrali doppi ed esercizi svolti",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=z9_8raKBABs",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1828,6 +2268,14 @@
       "last_note": "",
       "module": "Fase 4: Integrazione in due variabili",
       "phase": 4,
+      "resources": [
+        {
+          "title": "Integrali doppi in coordinate polari e Matrice Jacobiana",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=vAHcV1TKoZ0",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1893,6 +2341,14 @@
       "last_note": "",
       "module": "Fase 4: Integrazione in due variabili",
       "phase": 4,
+      "resources": [
+        {
+          "title": "Integrali doppi: cambio di variabili (non polari)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=fwnv7CBUMJc",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -1958,6 +2414,14 @@
       "last_note": "",
       "module": "Fase 4: Integrazione in due variabili",
       "phase": 4,
+      "resources": [
+        {
+          "title": "Playlist: Analisi matematica 2",
+          "type": "playlist",
+          "url": "https://www.youtube.com/playlist?list=PLW4IfhQEjCpKCTlqcemqKEdZCpFhVaq6k",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -2023,6 +2487,32 @@
       "last_note": "",
       "module": "Fase 5: Calcolo delle Probabilità",
       "phase": 5,
+      "resources": [
+        {
+          "title": "Disposizioni semplici e con ripetizione",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=SvJJfKkq8Cw",
+          "watched": false
+        },
+        {
+          "title": "Combinazioni semplici e con ripetizione",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=4h_mrUcYAlA",
+          "watched": false
+        },
+        {
+          "title": "Permutazioni semplici e con ripetizione",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=vmYyZMgWD8A",
+          "watched": false
+        },
+        {
+          "title": "Probabilità, eventi aleatori ed esercizi",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=fwar3tdJdYM",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -2088,6 +2578,32 @@
       "last_note": "",
       "module": "Fase 5: Calcolo delle Probabilità",
       "phase": 5,
+      "resources": [
+        {
+          "title": "Probabilità condizionata ed eventi indipendenti",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=b6O6FVesMwE",
+          "watched": false
+        },
+        {
+          "title": "Formula della probabilità totale",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=dxH-sn4BPf4",
+          "watched": false
+        },
+        {
+          "title": "Formula di Bayes ed esercizi",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=vsRR3c3mG_E",
+          "watched": false
+        },
+        {
+          "title": "Distribuzione binomiale (Bernoulli) e multinomiale",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=a8mqbtzYe5A",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -2153,6 +2669,32 @@
       "last_note": "",
       "module": "Fase 5: Calcolo delle Probabilità",
       "phase": 5,
+      "resources": [
+        {
+          "title": "Variabili aleatorie discrete",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=klQbmn5VjNQ",
+          "watched": false
+        },
+        {
+          "title": "Variabili aleatorie continue: teoria ed esercizi",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=JGX33jYUlLY",
+          "watched": false
+        },
+        {
+          "title": "Distribuzione di Poisson",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=cMEfG_vWjxM",
+          "watched": false
+        },
+        {
+          "title": "Distribuzione gaussiana o normale",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=JUe7Zqv2ECg",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -2218,6 +2760,14 @@
       "last_note": "",
       "module": "Fase 5: Calcolo delle Probabilità",
       "phase": 5,
+      "resources": [
+        {
+          "title": "Valore atteso e varianza di una variabile aleatoria",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=m6KfL52GCVI",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -2283,6 +2833,7 @@
       "last_note": "",
       "module": "Fase 5: Calcolo delle Probabilità",
       "phase": 5,
+      "resources": [],
       "segments": [
         {
           "done": false,
@@ -2348,6 +2899,14 @@
       "last_note": "",
       "module": "Fase 5: Calcolo delle Probabilità",
       "phase": 5,
+      "resources": [
+        {
+          "title": "Playlist: Calcolo combinatorio e probabilità",
+          "type": "playlist",
+          "url": "https://www.youtube.com/playlist?list=PLW4IfhQEjCpJf3xNfFp5hafh6-gHO9gnO",
+          "watched": false
+        }
+      ],
       "segments": [
         {
           "done": false,
@@ -2413,6 +2972,7 @@
       "last_note": "",
       "module": "Fase 6: Simulazioni d'Esame e Orale",
       "phase": 6,
+      "resources": [],
       "segments": [
         {
           "done": false,
@@ -2460,6 +3020,7 @@
       "last_note": "",
       "module": "Fase 6: Simulazioni d'Esame e Orale",
       "phase": 6,
+      "resources": [],
       "segments": [
         {
           "done": false,
@@ -2525,6 +3086,7 @@
       "last_note": "",
       "module": "Fase 6: Simulazioni d'Esame e Orale",
       "phase": 6,
+      "resources": [],
       "segments": [
         {
           "done": false,
@@ -2572,6 +3134,7 @@
       "last_note": "",
       "module": "Fase 6: Simulazioni d'Esame e Orale",
       "phase": 6,
+      "resources": [],
       "segments": [
         {
           "done": false,
@@ -2633,6 +3196,7 @@
       "last_note": "",
       "module": "Fase 6: Simulazioni d'Esame e Orale",
       "phase": 6,
+      "resources": [],
       "segments": [
         {
           "done": false,

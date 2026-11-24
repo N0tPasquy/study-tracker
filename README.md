@@ -8,7 +8,29 @@ L'interfaccia e l'esperienza d'uso prendono forte ispirazione da **Neovim**: wor
 - **Controlli stile Neovim:** navigazione e comandi in modalità `NORMAL`, scrittura note in modalità `INSERT`.
 - **Timer per segmenti:** suddivisione per blocchi di studio e pause, con conteggio overtime.
 - **Checklist e Statistiche:** spunta task, avanzamento globale, obiettivo settimanale e countdown all'esame.
+- **Sezione Risorse / Video:** videolezioni e playlist YouTube collegate a ciascun blocco, con stato visto (`[✔]`), badge (`[VID]`, `[PL]`) e apertura sicura nel browser di sistema senza corrompere il terminale.
 - **Salvataggio atomico:** sincronizzazione automatica dei progressi su `roadmap_matematica2.json`.
+
+---
+
+## Controlli da Tastiera
+
+| Tasto | Vista / Contesto | Azione |
+| :--- | :--- | :--- |
+| `Tab` / `Shift+Tab` | FOCUS | Alterna il focus tra **Tasks** e **Risorse** |
+| `j` / `k` (o `↓` / `↑`) | Tasks / Risorse | Scorri gli elementi della sezione attiva |
+| `x` / `Space` | Tasks | Spunta il task attivo |
+| `x` / `Space` | Risorse | Segna come visto/non visto (`watched`) |
+| `Enter` o `o` | Risorse | Apre il link nel browser di sistema |
+| `h` / `l` (o `[` / `]`) | FOCUS | Segmento timer precedente / successivo |
+| `H` / `L` | FOCUS | Blocco precedente / successivo |
+| `t` | FOCUS | Avvia / Pausa timer |
+| `c` / `R` | FOCUS | Completa/Riapri segmento / Reset timer segmento |
+| `M` | FOCUS | Marca l'intero blocco come completato |
+| `i` / `a` | FOCUS | Entra in modalità `INSERT` per modificare la nota |
+| `r` | Globale | Apri / Chiudi vista Roadmap completa |
+| `w` / `Ctrl+S` | Globale | Salvataggio immediato su disco |
+| `ZZ` / `Ctrl+Q` / `q` | Globale | Salva ed esci |
 
 ---
 

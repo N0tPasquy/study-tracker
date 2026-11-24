@@ -24,6 +24,13 @@ struct Task {
     bool done = false;
 };
 
+struct Resource {
+    std::string title;
+    std::string url;
+    std::string type = "video"; // "video" | "playlist"
+    bool watched = false;
+};
+
 struct Block {
     int id = 0;
     int phase = 0;
@@ -34,6 +41,7 @@ struct Block {
     int current_segment_index = 0;
     std::vector<Segment> segments;
     std::vector<Task> tasks;
+    std::vector<Resource> resources;
     std::string last_note;
 };
 
@@ -47,7 +55,8 @@ struct Roadmap {
 
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE_WITH_DEFAULT(Segment, label, type, target_minutes, elapsed_seconds, done)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE_WITH_DEFAULT(Task, text, done)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE_WITH_DEFAULT(Block, id, phase, module, title, completed, completed_at, current_segment_index, segments, tasks, last_note)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE_WITH_DEFAULT(Resource, title, url, type, watched)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE_WITH_DEFAULT(Block, id, phase, module, title, completed, completed_at, current_segment_index, segments, tasks, resources, last_note)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE_WITH_DEFAULT(Roadmap, exam_name, exam_date, weekly_goal_blocks, current_block_index, blocks)
 
 enum class AppMode {

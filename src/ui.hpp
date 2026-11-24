@@ -1,20 +1,29 @@
 #pragma once
 
 #include "model.hpp"
+#include "url_opener.hpp"
 #include <filesystem>
 #include <memory>
 #include <atomic>
 #include <chrono>
 #include <string>
+#include <functional>
 #include <ftxui/component/screen_interactive.hpp>
 #include <ftxui/component/component.hpp>
 #include <ftxui/component/component_options.hpp>
 
 namespace tracker {
 
+enum class FocusSection {
+    Tasks,
+    Resources
+};
+
+using UrlOpenerFunc = std::function<bool(const std::string&)>;
+
 class UIController {
 public:
-    UIController(Roadmap& roadmap, const std::filesystem::path& file_path, ftxui::ScreenInteractive& screen);
+    UIController(Roadmap& roadmap, const std::filesystem::path& file_path, ftxui::ScreenInteractive& screen, UrlOpenerFunc url_opener = nullptr);
 
     ftxui::Component CreateComponent();
 
@@ -37,8 +46,24 @@ public:
     void toggle_block_completed();
     void toggle_current_task();
     void toggle_task_at(int task_index);
+    void toggle_current_resource();
+    void toggle_resource_at(int resource_index);
+    void open_current_resource();
+    void open_resource_at(int resource_index);
+    void toggle_current_segment();
     void complete_current_segment();
     void reset_current_segment();
+
+    FocusSection get_focus_section() const { return focus_section_; }
+    void set_focus_section(FocusSection section) { focus_section_ = section; }
+
+    int get_selected_task_index() const { return selected_task_index_; }
+    void set_selected_task_index(int idx) { selected_task_index_ = idx; }
+
+    int get_selected_resource_index() const { return selected_resource_index_; }
+    void set_selected_resource_index(int idx) { selected_resource_index_ = idx; }
+
+    void set_url_opener(UrlOpenerFunc opener) { url_opener_ = std::move(opener); }
 
 private:
     Roadmap& roadmap_;
@@ -47,10 +72,14 @@ private:
 
     AppMode mode_ = AppMode::Normal;
     ViewState view_state_ = ViewState::Focus;
+    FocusSection focus_section_ = FocusSection::Tasks;
 
     int selected_task_index_ = 0;
+    int selected_resource_index_ = 0;
     int roadmap_selected_index_ = 0;
     int roadmap_scroll_offset_ = 0;
+
+    UrlOpenerFunc url_opener_;
 
     std::string note_buffer_;
     int note_cursor_ = 0;

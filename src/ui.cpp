@@ -10,8 +10,12 @@ namespace tracker {
 
 using namespace ftxui;
 
-UIController::UIController(Roadmap& roadmap, const std::filesystem::path& file_path, ScreenInteractive& screen)
-    : roadmap_(roadmap), file_path_(file_path), screen_(screen) {
+UIController::UIController(Roadmap& roadmap, const std::filesystem::path& file_path, ScreenInteractive& screen, UrlOpenerFunc url_opener)
+    : roadmap_(roadmap), file_path_(file_path), screen_(screen), url_opener_(std::move(url_opener)) {
+    if (!url_opener_) {
+        url_opener_ = open_url_in_browser;
+    }
+
     if (roadmap_.blocks.empty()) {
         throw std::runtime_error("Roadmap non contiene alcun blocco!");
     }
@@ -60,6 +64,7 @@ void UIController::switch_to_block(int block_index) {
     sync_note_buffer_to_block();
     roadmap_.current_block_index = block_index;
     selected_task_index_ = 0;
+    selected_resource_index_ = 0;
 
     auto& block = roadmap_.blocks[block_index];
     if (block.current_segment_index < 0 ||
@@ -129,18 +134,67 @@ void UIController::toggle_task_at(int task_index) {
     }
 }
 
-void UIController::complete_current_segment() {
+void UIController::toggle_current_resource() {
+    toggle_resource_at(selected_resource_index_);
+}
+
+void UIController::toggle_resource_at(int resource_index) {
+    auto& block = roadmap_.blocks[roadmap_.current_block_index];
+    if (resource_index >= 0 && resource_index < static_cast<int>(block.resources.size())) {
+        block.resources[resource_index].watched = !block.resources[resource_index].watched;
+        data_saved_ = false;
+        trigger_save();
+    }
+}
+
+void UIController::open_current_resource() {
+    open_resource_at(selected_resource_index_);
+}
+
+void UIController::open_resource_at(int resource_index) {
+    auto& block = roadmap_.blocks[roadmap_.current_block_index];
+    if (resource_index < 0 || resource_index >= static_cast<int>(block.resources.size())) {
+        return;
+    }
+
+    const auto& res = block.resources[resource_index];
+    if (!is_valid_http_url(res.url)) {
+        notify_alert("URL non valido: " + res.url);
+        return;
+    }
+
+    notify_alert("Apertura nel browser: " + res.title);
+    if (url_opener_) {
+        bool ok = url_opener_(res.url);
+        if (!ok) {
+            notify_alert("Impossibile aprire il browser per: " + res.url);
+        }
+    }
+}
+
+void UIController::toggle_current_segment() {
     auto& block = roadmap_.blocks[roadmap_.current_block_index];
     if (block.current_segment_index >= 0 &&
         block.current_segment_index < static_cast<int>(block.segments.size())) {
-        block.segments[block.current_segment_index].done = true;
-        if (block.current_segment_index + 1 < static_cast<int>(block.segments.size())) {
-            switch_to_segment(block.current_segment_index + 1);
+        auto& seg = block.segments[block.current_segment_index];
+        if (!seg.done) {
+            seg.done = true;
+            if (block.current_segment_index + 1 < static_cast<int>(block.segments.size())) {
+                switch_to_segment(block.current_segment_index + 1);
+            } else {
+                data_saved_ = false;
+                trigger_save();
+            }
         } else {
+            seg.done = false;
             data_saved_ = false;
             trigger_save();
         }
     }
+}
+
+void UIController::complete_current_segment() {
+    toggle_current_segment();
 }
 
 void UIController::reset_current_segment() {
@@ -148,6 +202,7 @@ void UIController::reset_current_segment() {
     if (block.current_segment_index >= 0 &&
         block.current_segment_index < static_cast<int>(block.segments.size())) {
         block.segments[block.current_segment_index].elapsed_seconds = 0;
+        block.segments[block.current_segment_index].done = false;
         data_saved_ = false;
         trigger_save();
     }
@@ -262,7 +317,7 @@ Element UIController::RenderFocusView() {
         block_title,
         filler(),
         status_badge,
-        text(" [M: Toggle] ") | dim,
+        text(" [M: Completa Blocco] ") | dim,
     });
 
     // 2. Segments & Timer Panel
@@ -336,7 +391,7 @@ Element UIController::RenderFocusView() {
             separatorEmpty(),
             hbox({
                 text("  Comandi: [t] " + std::string(timer_running_.load() ? "Pausa" : "Avvia") +
-                     "  [h/l] Seg Prec/Succ  [c] Completa Seg  [R] Reset Seg") | dim,
+                     "  [h/l] Segmento Prec/Succ  [c] " + std::string(cur_seg.done ? "Riapri Segmento" : "Completa Segmento") + "  [R] Reset Segmento") | dim,
             }),
         });
     }
@@ -380,7 +435,7 @@ Element UIController::RenderFocusView() {
     Elements task_elements;
     for (int i = 0; i < total_tasks; ++i) {
         const auto& t = block.tasks[i];
-        bool is_selected = (i == selected_task_index_);
+        bool is_selected = (focus_section_ == FocusSection::Tasks && i == selected_task_index_);
 
         std::string mark = t.done ? "[✔] " : "[ ] ";
         std::string pointer = is_selected ? "▶ " : "  ";
@@ -401,9 +456,76 @@ Element UIController::RenderFocusView() {
         task_elements.push_back(text("  (Nessun task per questo blocco)") | dim);
     }
 
+    std::string task_panel_title = " Checklist Tasks (" + std::to_string(done_tasks) + "/" + std::to_string(total_tasks) + ") ";
+    if (focus_section_ == FocusSection::Tasks) {
+        task_panel_title += "[j/k: Muovi, x/Space: Spunta, Tab: Risorse]";
+    } else {
+        task_panel_title += "[Tab per selezionare]";
+    }
+
     auto checklist_panel = window(
-        text(" Checklist Tasks (" + std::to_string(done_tasks) + "/" + std::to_string(total_tasks) + ") [j/k: Muovi, x/Space: Spunta] ") | bold,
+        text(task_panel_title) | bold | (focus_section_ == FocusSection::Tasks ? color(Color::CyanLight) : color(Color::GrayLight)),
         vbox(std::move(task_elements))
+    );
+
+    // 3b. Resources Panel
+    int watched_res = 0;
+    int total_res = static_cast<int>(block.resources.size());
+    for (const auto& r : block.resources) {
+        if (r.watched) watched_res++;
+    }
+
+    Elements res_elements;
+    for (int i = 0; i < total_res; ++i) {
+        const auto& r = block.resources[i];
+        bool is_selected = (focus_section_ == FocusSection::Resources && i == selected_resource_index_);
+
+        std::string mark = r.watched ? "[✔] " : "[ ] ";
+        std::string pointer = is_selected ? "▶ " : "  ";
+
+        std::string badge_label = "[VID]";
+        Color badge_bg = Color::DeepSkyBlue1;
+        if (r.type == "playlist") {
+            badge_label = "[PL]";
+            badge_bg = Color::Gold1;
+        } else if (r.type != "video") {
+            badge_label = "[LINK]";
+            badge_bg = Color::CadetBlue;
+        }
+
+        auto badge_elem = text(" " + badge_label + " ") | bold | color(Color::Black) | bgcolor(badge_bg);
+        auto item_text = text(" " + r.title);
+        if (r.watched) {
+            item_text = item_text | color(Color::GreenLight) | dim;
+        }
+
+        auto row_content = hbox({
+            text(pointer + mark),
+            badge_elem,
+            item_text,
+        });
+
+        if (is_selected) {
+            res_elements.push_back(row_content | bold | bgcolor(Color::NavyBlue) | color(Color::White));
+        } else {
+            res_elements.push_back(row_content);
+        }
+    }
+
+    if (res_elements.empty()) {
+        res_elements.push_back(text("  Nessuna risorsa collegata (usa il libro di testo)") | dim);
+    }
+
+    std::string res_panel_title = " Risorse (" + std::to_string(watched_res) + "/" + std::to_string(total_res) + ") ";
+    if (focus_section_ == FocusSection::Resources) {
+        res_panel_title += "[j/k: Muovi, x/Space: Visto, Enter/o: Apri URL, Tab: Tasks]";
+    } else {
+        res_panel_title += "[Tab per selezionare]";
+    }
+
+    auto resources_panel = window(
+        text(res_panel_title) | bold | (focus_section_ == FocusSection::Resources ? color(Color::CyanLight) : color(Color::GrayLight)),
+        vbox(std::move(res_elements))
     );
 
     // 4. Last Note Box
@@ -436,6 +558,8 @@ Element UIController::RenderFocusView() {
         timer_panel,
         separatorEmpty(),
         checklist_panel,
+        separatorEmpty(),
+        resources_panel,
         separatorEmpty(),
         note_panel,
     });
@@ -544,7 +668,11 @@ Element UIController::RenderFooter() {
         legend = text(" [Esc/Enter] Salva ed Esci  [Ctrl+S] Salva ") | color(Color::YellowLight);
     } else {
         if (view_state_ == ViewState::Focus) {
-            legend = text(" [t] Timer  [h/l] Seg  [H/L] Blocco  [j/k] Tasks  [x] Check  [M] Done  [i/a] Nota  [r] Roadmap  [ZZ/q] Esci ") | dim;
+            if (focus_section_ == FocusSection::Resources) {
+                legend = text(" [j/k] Risorse  [Enter/o] Apri Link  [x/Space] Visto  [Tab] Tasks  [t] Timer  [h/l] Segmento  [H/L] Blocco  [r] Roadmap  [ZZ/q] Esci ") | dim;
+            } else {
+                legend = text(" [j/k] Tasks  [x/Space] Spunta  [Tab] Risorse  [t] Timer  [h/l] Segmento  [H/L] Blocco  [i/a] Nota  [r] Roadmap  [ZZ/q] Esci ") | dim;
+            }
         } else {
             legend = text(" [j/k] Muovi  [Enter/l] Seleziona  [Ctrl+d/u] Pagina  [gg/G] Cima/Fondo  [Esc/q] Indietro ") | dim;
         }
@@ -675,7 +803,7 @@ Component UIController::CreateComponent() {
         }
 
         // 1. Global Shortcuts (Both Focus and Roadmap)
-        if (event == Event::Tab || event.character() == "r") {
+        if (event.character() == "r") {
             if (view_state_ == ViewState::Focus) {
                 view_state_ = ViewState::Roadmap;
                 roadmap_selected_index_ = roadmap_.current_block_index;
@@ -724,23 +852,55 @@ Component UIController::CreateComponent() {
         // 2. View-specific Shortcuts
 
         if (view_state_ == ViewState::Focus) {
-            // Task Checklist Navigation
-            if (event.character() == "j" || event == Event::ArrowDown) {
-                auto& block = roadmap_.blocks[roadmap_.current_block_index];
-                if (!block.tasks.empty()) {
-                    selected_task_index_ = std::min(selected_task_index_ + 1, static_cast<int>(block.tasks.size()) - 1);
+            // Tab or Shift+Tab: cycle focus between Tasks and Resources
+            if (event == Event::Tab || event == Event::TabReverse) {
+                focus_section_ = (focus_section_ == FocusSection::Tasks) ? FocusSection::Resources : FocusSection::Tasks;
+                return true;
+            }
+
+            if (focus_section_ == FocusSection::Tasks) {
+                // Task Checklist Navigation
+                if (event.character() == "j" || event == Event::ArrowDown) {
+                    auto& block = roadmap_.blocks[roadmap_.current_block_index];
+                    if (!block.tasks.empty()) {
+                        selected_task_index_ = std::min(selected_task_index_ + 1, static_cast<int>(block.tasks.size()) - 1);
+                    }
+                    return true;
                 }
-                return true;
-            }
 
-            if (event.character() == "k" || event == Event::ArrowUp) {
-                selected_task_index_ = std::max(selected_task_index_ - 1, 0);
-                return true;
-            }
+                if (event.character() == "k" || event == Event::ArrowUp) {
+                    selected_task_index_ = std::max(selected_task_index_ - 1, 0);
+                    return true;
+                }
 
-            if (event.character() == "x" || event.character() == " " || event == Event::Return) {
-                toggle_current_task();
-                return true;
+                if (event.character() == "x" || event.character() == " " || event == Event::Return) {
+                    toggle_current_task();
+                    return true;
+                }
+            } else if (focus_section_ == FocusSection::Resources) {
+                // Resources Navigation
+                if (event.character() == "j" || event == Event::ArrowDown) {
+                    auto& block = roadmap_.blocks[roadmap_.current_block_index];
+                    if (!block.resources.empty()) {
+                        selected_resource_index_ = std::min(selected_resource_index_ + 1, static_cast<int>(block.resources.size()) - 1);
+                    }
+                    return true;
+                }
+
+                if (event.character() == "k" || event == Event::ArrowUp) {
+                    selected_resource_index_ = std::max(selected_resource_index_ - 1, 0);
+                    return true;
+                }
+
+                if (event.character() == "x" || event.character() == " ") {
+                    toggle_current_resource();
+                    return true;
+                }
+
+                if (event == Event::Return || event.character() == "o") {
+                    open_current_resource();
+                    return true;
+                }
             }
 
             // Segment Navigation
@@ -808,6 +968,11 @@ Component UIController::CreateComponent() {
                 return true;
             }
         } else if (view_state_ == ViewState::Roadmap) {
+            if (event == Event::Tab) {
+                view_state_ = ViewState::Focus;
+                return true;
+            }
+
             // Roadmap Navigation
             if (event.character() == "j" || event == Event::ArrowDown) {
                 roadmap_selected_index_ = std::min(roadmap_selected_index_ + 1, static_cast<int>(roadmap_.blocks.size()) - 1);

@@ -6,6 +6,7 @@
 #include "../src/model.hpp"
 #include "../src/storage.hpp"
 #include "../src/ui.hpp"
+#include "../src/url_opener.hpp"
 
 void test_load_and_utf8() {
     std::filesystem::path original_path = "./roadmap_matematica2.json";
@@ -100,6 +101,16 @@ void test_atomic_save_and_reload() {
 void test_ui_events_and_modal_navigation() {
     std::filesystem::path test_json = "./test_ui_events.json";
     auto roadmap = tracker::load_roadmap("./roadmap_matematica2.json");
+    // Ensure deterministic test fixture independent of user runtime progress
+    roadmap.current_block_index = 0;
+    roadmap.blocks[0].current_segment_index = 0;
+    roadmap.blocks[0].segments[0].done = false;
+    roadmap.blocks[0].segments[1].done = false;
+    roadmap.blocks[0].segments[2].done = false;
+    roadmap.blocks[0].tasks[0].done = false;
+    roadmap.blocks[0].tasks[1].done = false;
+    roadmap.blocks[0].completed = false;
+    roadmap.blocks[0].completed_at = "";
     tracker::save_roadmap(roadmap, test_json);
 
     auto screen = ftxui::ScreenInteractive::FitComponent();
@@ -138,6 +149,30 @@ void test_ui_events_and_modal_navigation() {
     assert(roadmap.blocks[0].current_segment_index == 1);
     assert(!controller.is_timer_running()); // Verified auto-pause!
 
+    // 5b. Test completing segment with 'c' on segment 1
+    assert(!roadmap.blocks[0].segments[1].done);
+    component->OnEvent(Event::Character('c'));
+    assert(roadmap.blocks[0].segments[1].done);
+    // Advances to next segment (index 2)
+    assert(roadmap.blocks[0].current_segment_index == 2);
+
+    // Return to segment 1 with 'h'
+    component->OnEvent(Event::Character('h'));
+    assert(roadmap.blocks[0].current_segment_index == 1);
+    assert(roadmap.blocks[0].segments[1].done);
+
+    // Pressing 'c' on an already completed segment removes the checkmark (reopen)
+    component->OnEvent(Event::Character('c'));
+    assert(!roadmap.blocks[0].segments[1].done);
+    assert(roadmap.blocks[0].current_segment_index == 1);
+
+    // Test 'R' resets both elapsed_seconds and done
+    roadmap.blocks[0].segments[1].elapsed_seconds = 45;
+    roadmap.blocks[0].segments[1].done = true;
+    component->OnEvent(Event::Character('R'));
+    assert(roadmap.blocks[0].segments[1].elapsed_seconds == 0);
+    assert(!roadmap.blocks[0].segments[1].done);
+
     // 6. Test block completion toggle with 'M'
     assert(!roadmap.blocks[0].completed);
     component->OnEvent(Event::Character('M'));
@@ -170,12 +205,188 @@ void test_ui_events_and_modal_navigation() {
     std::cout << "[PASS] test_ui_events_and_modal_navigation\n";
 }
 
+void test_resources_serialization_and_retrocompat() {
+    // 1. Deserialization of Block JSON without "resources" key
+    nlohmann::json j_old = {
+        {"id", 1},
+        {"phase", 0},
+        {"module", "Fase 0"},
+        {"title", "Test Old Block"},
+        {"completed", false},
+        {"completed_at", ""},
+        {"current_segment_index", 0},
+        {"segments", nlohmann::json::array()},
+        {"tasks", nlohmann::json::array()},
+        {"last_note", ""}
+    };
+
+    tracker::Block b_old = j_old.get<tracker::Block>();
+    assert(b_old.resources.empty());
+
+    // 2. Deserialization of Block with "resources": []
+    nlohmann::json j_empty = j_old;
+    j_empty["resources"] = nlohmann::json::array();
+    tracker::Block b_empty = j_empty.get<tracker::Block>();
+    assert(b_empty.resources.empty());
+
+    // 3. Round-trip with video and playlist resources
+    tracker::Resource r1{"Video 1", "https://www.youtube.com/watch?v=123", "video", false};
+    tracker::Resource r2{"Playlist 1", "https://www.youtube.com/playlist?list=abc", "playlist", true};
+    b_empty.resources = {r1, r2};
+
+    nlohmann::json j_serialized = b_empty;
+    tracker::Block b_roundtrip = j_serialized.get<tracker::Block>();
+    assert(b_roundtrip.resources.size() == 2);
+    assert(b_roundtrip.resources[0].title == "Video 1");
+    assert(b_roundtrip.resources[0].url == "https://www.youtube.com/watch?v=123");
+    assert(b_roundtrip.resources[0].type == "video");
+    assert(!b_roundtrip.resources[0].watched);
+
+    assert(b_roundtrip.resources[1].title == "Playlist 1");
+    assert(b_roundtrip.resources[1].url == "https://www.youtube.com/playlist?list=abc");
+    assert(b_roundtrip.resources[1].type == "playlist");
+    assert(b_roundtrip.resources[1].watched);
+
+    // 4. Default safe values for missing fields inside Resource
+    nlohmann::json j_minimal_res = {
+        {"title", "Default Resource"},
+        {"url", "https://example.com/video"}
+    };
+    tracker::Resource r_minimal = j_minimal_res.get<tracker::Resource>();
+    assert(r_minimal.title == "Default Resource");
+    assert(r_minimal.url == "https://example.com/video");
+    assert(r_minimal.type == "video");
+    assert(!r_minimal.watched);
+
+    std::cout << "[PASS] test_resources_serialization_and_retrocompat\n";
+}
+
+void test_url_validation() {
+    // Valid URLs
+    assert(tracker::is_valid_http_url("https://www.youtube.com/watch?v=fgYEQxrBlUU"));
+    assert(tracker::is_valid_http_url("https://www.youtube.com/playlist?list=PL..."));
+    assert(tracker::is_valid_http_url("http://example.com/test?a=1&b=2#section"));
+    assert(tracker::is_valid_http_url("https://youtu.be/abc123XYZ"));
+
+    // Invalid URLs
+    assert(!tracker::is_valid_http_url(""));
+    assert(!tracker::is_valid_http_url("https://"));
+    assert(!tracker::is_valid_http_url("http://"));
+    assert(!tracker::is_valid_http_url("ftp://example.com"));
+    assert(!tracker::is_valid_http_url("file:///etc/passwd"));
+    assert(!tracker::is_valid_http_url("javascript:alert(1)"));
+    assert(!tracker::is_valid_http_url("https://example.com/test\n"));
+    assert(!tracker::is_valid_http_url("https://example.com/test\r"));
+    assert(!tracker::is_valid_http_url("https://example.com/test with spaces"));
+    assert(!tracker::is_valid_http_url("https://example.com; rm -rf /"));
+    assert(!tracker::is_valid_http_url("https://example.com\"test\""));
+    assert(!tracker::is_valid_http_url("https://example.com'test'"));
+    assert(!tracker::is_valid_http_url("https://example.com`test`"));
+
+    std::cout << "[PASS] test_url_validation\n";
+}
+
+void test_resources_ui_and_url_opener_mock() {
+    std::filesystem::path test_json = "./test_resources_temp.json";
+    auto roadmap = tracker::load_roadmap("./roadmap_matematica2.json");
+    roadmap.current_block_index = 0;
+    roadmap.blocks[0].current_segment_index = 0;
+    roadmap.blocks[0].resources[0].watched = false;
+    roadmap.blocks[0].resources[1].watched = false;
+    tracker::save_roadmap(roadmap, test_json);
+
+    std::string opened_url;
+    int open_count = 0;
+    auto mock_opener = [&](const std::string& url) -> bool {
+        opened_url = url;
+        open_count++;
+        return true;
+    };
+
+    auto screen = ftxui::ScreenInteractive::FitComponent();
+    tracker::UIController controller(roadmap, test_json, screen, mock_opener);
+    auto component = controller.CreateComponent();
+
+    using namespace ftxui;
+
+    // 1. Initial focus is Tasks
+    assert(controller.get_focus_section() == tracker::FocusSection::Tasks);
+
+    // 2. Tab switches focus to Resources
+    bool handled_tab = component->OnEvent(Event::Tab);
+    assert(handled_tab);
+    assert(controller.get_focus_section() == tracker::FocusSection::Resources);
+
+    // Block 0 has 6 resources
+    assert(roadmap.blocks[0].resources.size() == 6);
+    assert(controller.get_selected_resource_index() == 0);
+    assert(!roadmap.blocks[0].resources[0].watched);
+
+    // 3. Toggle watched with 'x'
+    component->OnEvent(Event::Character('x'));
+    assert(roadmap.blocks[0].resources[0].watched == true);
+
+    // 4. Toggle watched back with 'Space'
+    component->OnEvent(Event::Character(' '));
+    assert(roadmap.blocks[0].resources[0].watched == false);
+
+    // 5. Navigate resources with 'j'
+    component->OnEvent(Event::Character('j'));
+    assert(controller.get_selected_resource_index() == 1);
+
+    // 6. Open resource 1 with 'o'
+    component->OnEvent(Event::Character('o'));
+    assert(open_count == 1);
+    assert(opened_url == roadmap.blocks[0].resources[1].url);
+
+    // 7. Open resource 1 with 'Return'
+    component->OnEvent(Event::Return);
+    assert(open_count == 2);
+    assert(opened_url == roadmap.blocks[0].resources[1].url);
+
+    // 8. Switching block resets selected_resource_index_
+    controller.switch_to_block(1);
+    assert(controller.get_selected_resource_index() == 0);
+
+    // 9. Block with empty resources: safe no-op on 'o' and 'x'
+    int empty_block_idx = -1;
+    for (int i = 0; i < static_cast<int>(roadmap.blocks.size()); ++i) {
+        if (roadmap.blocks[i].resources.empty()) {
+            empty_block_idx = i;
+            break;
+        }
+    }
+    assert(empty_block_idx >= 0);
+    controller.switch_to_block(empty_block_idx);
+    controller.set_focus_section(tracker::FocusSection::Resources);
+    open_count = 0;
+    component->OnEvent(Event::Character('o'));
+    assert(open_count == 0); // No opener call
+    component->OnEvent(Event::Character('x')); // No crash
+
+    // 10. Verify persistence
+    controller.switch_to_block(0);
+    controller.set_focus_section(tracker::FocusSection::Resources);
+    component->OnEvent(Event::Character('x')); // Watched resource 0
+    controller.trigger_save();
+
+    auto reloaded = tracker::load_roadmap(test_json);
+    assert(reloaded.blocks[0].resources[0].watched == true);
+
+    // Clean up
+    std::filesystem::remove(test_json);
+    std::cout << "[PASS] test_resources_ui_and_url_opener_mock\n";
+}
+
 int main() {
     std::cout << "--- RUNNING TRACKER UNIT & INTEGRATION TESTS ---\n";
     test_load_and_utf8();
     test_date_and_weekly_goal();
     test_atomic_save_and_reload();
     test_ui_events_and_modal_navigation();
+    test_resources_serialization_and_retrocompat();
+    test_url_validation();
+    test_resources_ui_and_url_opener_mock();
     std::cout << "--- ALL TESTS PASSED SUCCESSFULLY! ---\n";
     return 0;
 }

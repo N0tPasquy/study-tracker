@@ -27,6 +27,7 @@ add_executable(study_tracker
   src/main.cpp
   src/storage.cpp
   src/ui.cpp
+  src/url_opener.cpp
 )
 
 target_include_directories(study_tracker PRIVATE src)
@@ -42,6 +43,7 @@ add_executable(tracker_tests
   tests/test_tracker.cpp
   src/storage.cpp
   src/ui.cpp
+  src/url_opener.cpp
 )
 
 target_include_directories(tracker_tests PRIVATE src)
