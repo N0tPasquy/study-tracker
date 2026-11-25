@@ -88,6 +88,8 @@ bool open_url_in_browser(const std::string& url) {
 #else
         const char* cmd = "xdg-open";
 #endif
+        // POSIX execvp requires a non-const `char* const argv[]` signature for historical reasons;
+        // it does not mutate the argument strings.
         char* const args[] = {
             const_cast<char*>(cmd),
             const_cast<char*>(url.c_str()),

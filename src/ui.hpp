@@ -1,29 +1,29 @@
 #pragma once
 
 #include "model.hpp"
+#include "navigation_controller.hpp"
+#include "persistence_controller.hpp"
+#include "timer_controller.hpp"
 #include "url_opener.hpp"
-#include <filesystem>
-#include <memory>
+
 #include <atomic>
 #include <chrono>
-#include <string>
+#include <filesystem>
 #include <functional>
-#include <ftxui/component/screen_interactive.hpp>
+#include <string>
 #include <ftxui/component/component.hpp>
-#include <ftxui/component/component_options.hpp>
+#include <ftxui/component/screen_interactive.hpp>
 
 namespace tracker {
-
-enum class FocusSection {
-    Tasks,
-    Resources
-};
 
 using UrlOpenerFunc = std::function<bool(const std::string&)>;
 
 class UIController {
 public:
-    UIController(Roadmap& roadmap, const std::filesystem::path& file_path, ftxui::ScreenInteractive& screen, UrlOpenerFunc url_opener = nullptr);
+    UIController(Roadmap& roadmap,
+                 const std::filesystem::path& file_path,
+                 ftxui::ScreenInteractive& screen,
+                 UrlOpenerFunc url_opener = nullptr);
 
     ftxui::Component CreateComponent();
 
@@ -32,12 +32,15 @@ public:
     void notify_alert(const std::string& msg);
     void dismiss_alert();
 
-    bool is_timer_running() const { return timer_running_.load(); }
-    void set_timer_running(bool running) { timer_running_.store(running); }
+    [[nodiscard]] bool is_timer_running() const { return timer_.is_running(); }
+    void set_timer_running(bool running) { timer_.set_running(running); }
     void toggle_timer();
 
-    bool is_app_running() const { return app_running_.load(); }
+    [[nodiscard]] bool is_app_running() const { return app_running_.load(); }
     void stop_app() { app_running_.store(false); }
+
+    [[nodiscard]] bool is_data_saved() const { return persistence_.is_saved(); }
+    [[nodiscard]] const std::string& get_alert_message() const { return alert_message_; }
 
     void switch_to_block(int block_index);
     void switch_to_segment(int segment_index);
@@ -54,33 +57,28 @@ public:
     void complete_current_segment();
     void reset_current_segment();
 
-    FocusSection get_focus_section() const { return focus_section_; }
-    void set_focus_section(FocusSection section) { focus_section_ = section; }
+    [[nodiscard]] FocusSection get_focus_section() const { return navigation_.focus_section(); }
+    void set_focus_section(FocusSection section) { navigation_.set_focus_section(section); }
 
-    int get_selected_task_index() const { return selected_task_index_; }
-    void set_selected_task_index(int idx) { selected_task_index_ = idx; }
+    [[nodiscard]] int get_selected_task_index() const { return navigation_.selected_task_index(); }
+    void set_selected_task_index(int idx) { navigation_.set_selected_task_index(idx); }
 
-    int get_selected_resource_index() const { return selected_resource_index_; }
-    void set_selected_resource_index(int idx) { selected_resource_index_ = idx; }
+    [[nodiscard]] int get_selected_resource_index() const { return navigation_.selected_resource_index(); }
+    void set_selected_resource_index(int idx) { navigation_.set_selected_resource_index(idx); }
 
-    int get_note_cursor() const { return note_cursor_; }
+    [[nodiscard]] int get_note_cursor() const { return note_cursor_; }
 
     void set_url_opener(UrlOpenerFunc opener) { url_opener_ = std::move(opener); }
 
 private:
     Roadmap& roadmap_;
-    std::filesystem::path file_path_;
     ftxui::ScreenInteractive& screen_;
 
+    PersistenceController persistence_;
+    TimerController timer_;
+    NavigationController navigation_;
+
     AppMode mode_ = AppMode::Normal;
-    ViewState view_state_ = ViewState::Focus;
-    FocusSection focus_section_ = FocusSection::Tasks;
-
-    int selected_task_index_ = 0;
-    int selected_resource_index_ = 0;
-    int roadmap_selected_index_ = 0;
-    int roadmap_scroll_offset_ = 0;
-
     UrlOpenerFunc url_opener_;
 
     std::string note_buffer_;
@@ -88,9 +86,6 @@ private:
     ftxui::Box note_box_;
 
     std::atomic<bool> app_running_{true};
-    std::atomic<bool> timer_running_{false};
-    bool data_saved_ = true;
-    int timer_ticks_since_save_ = 0;
 
     std::string alert_message_;
     int alert_ticks_ = 0;
@@ -98,10 +93,10 @@ private:
     char pending_key_ = '\0';
     std::chrono::steady_clock::time_point pending_key_time_;
 
-    ftxui::Element RenderHeader();
-    ftxui::Element RenderFocusView();
-    ftxui::Element RenderRoadmapView();
-    ftxui::Element RenderFooter();
+    bool handle_insert_event(ftxui::Event& event);
+    bool handle_normal_event(ftxui::Event& event);
+    bool handle_focus_event(const ftxui::Event& event);
+    bool handle_roadmap_event(const ftxui::Event& event);
 
     void sync_note_buffer_from_block();
     void sync_note_buffer_to_block();

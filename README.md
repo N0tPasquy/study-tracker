@@ -63,9 +63,12 @@ cmake --build build
 ### Esecuzione
 ```bash
 ./build/study_tracker
+./build/study_tracker --help
 ```
 
-Per eseguire i test unitari e di integrazione:
+Per eseguire i test unitari e di integrazione (con doctest / CTest):
 ```bash
+ctest --test-dir build --output-on-failure
+# oppure direttamente:
 ./build/tracker_tests
 ```
