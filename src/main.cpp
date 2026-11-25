@@ -1,51 +1,89 @@
-#include <iostream>
-#include <filesystem>
-#include <thread>
-#include <chrono>
 #include <atomic>
+#include <chrono>
 #include <csignal>
-#include <functional>
+#include <filesystem>
+#include <iostream>
+#include <optional>
+#include <string_view>
+#include <thread>
 
 #include "model.hpp"
 #include "storage.hpp"
 #include "ui.hpp"
 
 namespace {
-    std::function<void()> g_exit_closure;
-    void signal_handler(int signum) {
-        (void)signum;
-        if (g_exit_closure) {
-            g_exit_closure();
+
+constexpr std::string_view kAppVersion = "1.0.0";
+
+std::atomic<int> g_signal_received{0};
+static_assert(std::atomic<int>::is_always_lock_free,
+              "std::atomic<int> must be lock-free for async-signal-safe signal handling");
+
+void signal_handler(int signum) {
+    g_signal_received.store(signum, std::memory_order_relaxed);
+}
+
+void print_usage(std::string_view program_name) {
+    std::cout << "Study Tracker TUI v" << kAppVersion << "\n\n"
+              << "Uso:\n"
+              << "  " << program_name << " [opzioni] [percorso/a/roadmap.json]\n\n"
+              << "Opzioni:\n"
+              << "  -h, --help     Mostra questo messaggio di aiuto ed esce\n"
+              << "  -v, --version  Mostra la versione ed esce\n";
+}
+
+std::optional<std::filesystem::path> find_default_roadmap(const char* argv0) {
+    const std::filesystem::path p1 = "./roadmap_matematica2.json";
+    if (std::filesystem::exists(p1)) {
+        return p1;
+    }
+
+    if (argv0 != nullptr) {
+        const std::filesystem::path exe_dir = std::filesystem::path(argv0).parent_path();
+        if (!exe_dir.empty()) {
+            const std::filesystem::path p2 = exe_dir / "roadmap_matematica2.json";
+            if (std::filesystem::exists(p2)) {
+                return p2;
+            }
+            const std::filesystem::path p3 = exe_dir.parent_path() / "roadmap_matematica2.json";
+            if (std::filesystem::exists(p3)) {
+                return p3;
+            }
         }
     }
+
+    return std::nullopt;
 }
+
+} // namespace
 
 int main(int argc, char* argv[]) {
     try {
-        std::filesystem::path path;
-        if (argc > 1) {
-            path = argv[1];
-        } else {
-            // Cerca in ordine: working directory attuale, cartella del binario, parent del binario (es. build/..)
-            std::filesystem::path p1 = "./roadmap_matematica2.json";
-            std::filesystem::path exe_dir = std::filesystem::path(argv[0]).parent_path();
-            std::filesystem::path p2 = exe_dir / "roadmap_matematica2.json";
-            std::filesystem::path p3 = exe_dir.parent_path() / "roadmap_matematica2.json";
+        const std::string_view program_name = (argc > 0 && argv[0] != nullptr) ? argv[0] : "study_tracker";
+        std::optional<std::filesystem::path> cli_path;
 
-            if (std::filesystem::exists(p1)) {
-                path = p1;
-            } else if (std::filesystem::exists(p2)) {
-                path = p2;
-            } else if (std::filesystem::exists(p3)) {
-                path = p3;
-            } else {
-                path = p1; // Lascia p1 per segnalare l'errore
+        for (int i = 1; i < argc; ++i) {
+            const std::string_view arg = argv[i];
+            if (arg == "-h" || arg == "--help") {
+                print_usage(program_name);
+                return 0;
+            }
+            if (arg == "-v" || arg == "--version") {
+                std::cout << "study_tracker " << kAppVersion << "\n";
+                return 0;
+            }
+            if (!cli_path) {
+                cli_path = std::filesystem::path(arg);
             }
         }
 
+        const std::filesystem::path path = cli_path.has_value()
+            ? *cli_path
+            : find_default_roadmap(argc > 0 ? argv[0] : nullptr).value_or(std::filesystem::path("./roadmap_matematica2.json"));
+
         if (!std::filesystem::exists(path)) {
             std::cerr << "Errore: File non trovato al percorso '" << path.string() << "'\n";
-            std::cerr << "Uso: " << argv[0] << " [percorso/a/roadmap.json]\n";
+            std::cerr << "Uso: " << program_name << " [percorso/a/roadmap.json]\n";
             return 1;
         }
 
@@ -54,21 +92,23 @@ int main(int argc, char* argv[]) {
         auto screen = ftxui::ScreenInteractive::Fullscreen();
         tracker::UIController controller(roadmap, path, screen);
 
-        g_exit_closure = [&]() {
-            controller.stop_app();
-            screen.ExitLoopClosure()();
-        };
-
+        g_signal_received.store(0, std::memory_order_relaxed);
         std::signal(SIGINT, signal_handler);
         std::signal(SIGTERM, signal_handler);
 #if defined(SIGHUP)
         std::signal(SIGHUP, signal_handler);
 #endif
 
-        // Dedicated background timer thread
+        // Dedicated background timer & signal-polling thread
         std::thread timer_thread([&controller, &screen]() {
             auto last_tick = std::chrono::steady_clock::now();
             while (controller.is_app_running()) {
+                if (g_signal_received.load(std::memory_order_relaxed) != 0) {
+                    controller.stop_app();
+                    screen.ExitLoopClosure()();
+                    break;
+                }
+
                 std::this_thread::sleep_for(std::chrono::milliseconds(100));
                 auto now = std::chrono::steady_clock::now();
                 if (std::chrono::duration_cast<std::chrono::milliseconds>(now - last_tick).count() >= 1000) {
