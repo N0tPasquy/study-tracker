@@ -1,11 +1,11 @@
 {
   "blocks": [
     {
-      "completed": false,
-      "completed_at": "",
+      "completed": true,
+      "completed_at": "2026-11-27",
       "current_segment_index": 0,
       "id": 1,
-      "last_note": "Iniziare il prima possibile",
+      "last_note": "Mniziare il prima possibile",
       "module": "Fase 0: Prerequisiti",
       "phase": 0,
       "resources": [
@@ -13,7 +13,7 @@
           "title": "Limiti di funzioni e forme indeterminate",
           "type": "video",
           "url": "https://www.youtube.com/watch?v=UVoMX19xmmQ",
-          "watched": false
+          "watched": true
         },
         {
           "title": "Limite notevole esponenziale di Nepero (esercizi)",
@@ -48,15 +48,15 @@
       ],
       "segments": [
         {
-          "done": false,
-          "elapsed_seconds": 0,
+          "done": true,
+          "elapsed_seconds": 6197,
           "label": "Teoria",
           "target_minutes": 60,
           "type": "study"
         },
         {
-          "done": false,
-          "elapsed_seconds": 0,
+          "done": true,
+          "elapsed_seconds": 900,
           "label": "Pausa",
           "target_minutes": 15,
           "type": "break"
