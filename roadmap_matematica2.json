@@ -3,9 +3,9 @@
     {
       "completed": true,
       "completed_at": "2026-11-27",
-      "current_segment_index": 0,
+      "current_segment_index": 2,
       "id": 1,
-      "last_note": "Video 2, min 13:47",
+      "last_note": "Fare eserczi sui limiti",
       "module": "Fase 0: Prerequisiti",
       "phase": 0,
       "resources": [
@@ -19,19 +19,19 @@
           "title": "Limite notevole esponenziale di Nepero (esercizi)",
           "type": "video",
           "url": "https://www.youtube.com/watch?v=fwS7dISRUts",
-          "watched": false
+          "watched": true
         },
         {
           "title": "Limiti notevoli: esponenziale e logaritmico",
           "type": "video",
           "url": "https://www.youtube.com/watch?v=A08bTf756cc",
-          "watched": false
+          "watched": true
         },
         {
           "title": "Limiti notevoli: (1-cos x)/x^2 e [(1+x)^a - 1]/x",
           "type": "video",
           "url": "https://www.youtube.com/watch?v=8bPn4Pm_xzA",
-          "watched": false
+          "watched": true
         },
         {
           "title": "Determinante di una matrice (regola di Laplace)",
@@ -49,7 +49,7 @@
       "segments": [
         {
           "done": true,
-          "elapsed_seconds": 6197,
+          "elapsed_seconds": 6645,
           "label": "Teoria",
           "target_minutes": 60,
           "type": "study"
@@ -63,7 +63,7 @@
         },
         {
           "done": false,
-          "elapsed_seconds": 0,
+          "elapsed_seconds": 3368,
           "label": "Esercizi",
           "target_minutes": 120,
           "type": "study"
@@ -85,7 +85,7 @@
       ],
       "tasks": [
         {
-          "done": false,
+          "done": true,
           "text": "Ripasso limiti notevoli e gerarchia degli infiniti"
         },
         {
