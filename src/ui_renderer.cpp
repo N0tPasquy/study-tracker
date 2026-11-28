@@ -141,6 +141,21 @@ ftxui::Element render_focus_view(const UIRenderContext& ctx) {
 
         const std::string status_label = ctx.timer_running ? "TIMER IN CORSO" : "IN PAUSA";
 
+        const int percent = static_cast<int>(seg_ratio * 100.0f);
+        const Color seg_type_color = (cur_seg.type == "study") ? Color::DeepSkyBlue1 : Color::DarkOrange;
+        const Color bar_fg = seg_type_color;
+
+        std::string percent_label = " " + std::to_string(percent) + "% ";
+        if (cur_seg.elapsed_seconds > target_sec) {
+            percent_label = " 100% (+Overtime) ";
+        }
+
+        auto gauge_row = hbox({
+            text("  [") | bold | color(bar_fg),
+            gauge(seg_ratio) | color(bar_fg) | bgcolor(Color::Grey15) | flex,
+            text("]" + percent_label) | bold | color(bar_fg),
+        });
+
         timer_display = vbox({
             hbox({
                 text("  " + cur_seg.label + "  ") | bold | color(Color::White) | bgcolor(seg_badge_bg),
@@ -149,7 +164,7 @@ ftxui::Element render_focus_view(const UIRenderContext& ctx) {
                 text("  [" + status_label + "]") | (ctx.timer_running ? color(Color::Green) : dim),
             }),
             separatorEmpty(),
-            gauge(seg_ratio) | color(cur_seg.done ? Color::Green : Color::Cyan),
+            gauge_row,
             separatorEmpty(),
             hbox({
                 text("  Comandi: [t] " + std::string(ctx.timer_running ? "Pausa" : "Avvia") +

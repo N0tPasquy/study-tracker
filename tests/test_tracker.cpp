@@ -12,6 +12,7 @@
 #include "../src/storage.hpp"
 #include "../src/ui.hpp"
 #include "../src/url_opener.hpp"
+#include "../src/sound_player.hpp"
 
 namespace {
 
@@ -219,11 +220,16 @@ TEST_CASE("UI events, modal navigation, and timer completion") {
     component->OnEvent(Event::Character('t'));
     CHECK(controller.is_timer_running());
 
+    int alarm_sound_invocations = 0;
+    controller.set_sound_player([&alarm_sound_invocations]() {
+        alarm_sound_invocations++;
+    });
+
     const int initial_elapsed = roadmap.blocks[0].segments[0].elapsed_seconds;
     controller.tick_timer();
     CHECK(roadmap.blocks[0].segments[0].elapsed_seconds == initial_elapsed + 1);
 
-    // Advance timer to segment target (1 minute = 60s) -> auto-complete + auto-pause + alert
+    // Advance timer to segment target (1 minute = 60s) -> auto-complete + auto-pause + alert + alarm sound
     for (int s = 1; s < 60; ++s) {
         controller.tick_timer();
     }
@@ -231,6 +237,7 @@ TEST_CASE("UI events, modal navigation, and timer completion") {
     CHECK(roadmap.blocks[0].segments[0].done);
     CHECK_FALSE(controller.is_timer_running());
     CHECK(controller.get_alert_message().find("completato") != std::string::npos);
+    CHECK(alarm_sound_invocations == 1);
 
     // Resuming timer enters overtime cleanly without losing completion
     component->OnEvent(Event::Character('t'));

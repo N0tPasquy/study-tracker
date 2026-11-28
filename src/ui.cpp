@@ -12,13 +12,18 @@ namespace tracker {
 UIController::UIController(Roadmap& roadmap,
                            const std::filesystem::path& file_path,
                            ftxui::ScreenInteractive& screen,
-                           UrlOpenerFunc url_opener)
+                           UrlOpenerFunc url_opener,
+                           SoundPlayerFunc sound_player)
     : roadmap_(roadmap),
       screen_(screen),
       persistence_(file_path),
-      url_opener_(std::move(url_opener)) {
+      url_opener_(std::move(url_opener)),
+      sound_player_(std::move(sound_player)) {
     if (!url_opener_) {
         url_opener_ = open_url_in_browser;
+    }
+    if (!sound_player_) {
+        sound_player_ = play_alarm_sound;
     }
 
     if (roadmap_.blocks.empty()) {
@@ -207,7 +212,9 @@ void UIController::tick_timer() {
     persistence_.mark_dirty();
 
     if (result.segment_completed) {
-        std::cout << '\a' << std::flush;
+        if (sound_player_) {
+            sound_player_();
+        }
         notify_alert("Segmento '" + result.completed_segment_label +
                      "' completato! Premi [l] per avanzare o [t] per overtime.");
     }

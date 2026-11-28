@@ -5,6 +5,7 @@
 #include "persistence_controller.hpp"
 #include "timer_controller.hpp"
 #include "url_opener.hpp"
+#include "sound_player.hpp"
 
 #include <atomic>
 #include <chrono>
@@ -23,7 +24,8 @@ public:
     UIController(Roadmap& roadmap,
                  const std::filesystem::path& file_path,
                  ftxui::ScreenInteractive& screen,
-                 UrlOpenerFunc url_opener = nullptr);
+                 UrlOpenerFunc url_opener = nullptr,
+                 SoundPlayerFunc sound_player = nullptr);
 
     ftxui::Component CreateComponent();
 
@@ -69,6 +71,7 @@ public:
     [[nodiscard]] int get_note_cursor() const { return note_cursor_; }
 
     void set_url_opener(UrlOpenerFunc opener) { url_opener_ = std::move(opener); }
+    void set_sound_player(SoundPlayerFunc sound_player) { sound_player_ = std::move(sound_player); }
 
 private:
     Roadmap& roadmap_;
@@ -80,6 +83,7 @@ private:
 
     AppMode mode_ = AppMode::Normal;
     UrlOpenerFunc url_opener_;
+    SoundPlayerFunc sound_player_;
 
     std::string note_buffer_;
     int note_cursor_ = 0;

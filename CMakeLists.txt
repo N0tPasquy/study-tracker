@@ -39,6 +39,7 @@ add_library(tracker_lib STATIC
   src/date_utils.cpp
   src/navigation_controller.cpp
   src/persistence_controller.cpp
+  src/sound_player.cpp
   src/stats.cpp
   src/storage.cpp
   src/timer_controller.cpp
